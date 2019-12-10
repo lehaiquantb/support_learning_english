@@ -336,7 +336,7 @@ public class JDialogCRUD extends JDialog {
 					pathImage = fileChooser.getSelectedFile().getAbsolutePath();
 					panelImage.removeAll();
 					panelImage.add(new JLabel(Util1.getImageIconResizeByPath(getClass(),
-							fileChooser.getSelectedFile().getAbsolutePath(), 130, 109)));
+							fileChooser.getSelectedFile().getAbsolutePath(), null, 130, 109)));
 					panelImage.revalidate();
 					panelImage.repaint();
 				}
@@ -417,8 +417,8 @@ public class JDialogCRUD extends JDialog {
 		lblToday.setText(temp[0]);
 
 		panelImage.removeAll();
-		panelImage
-				.add(new JLabel(Util1.getImageIconResizeByPath(getClass(), wordModel.getPathOfImageFile(), 130, 109)));
+		panelImage.add(new JLabel(Util1.getImageIconResizeByPath(getClass(), wordModel.getPathOfImageFile(),
+				wordModel.getWordOrPhrase(), 130, 109)));
 		panelImage.revalidate();
 		panelImage.repaint();
 	}

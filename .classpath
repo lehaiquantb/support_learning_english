@@ -17,5 +17,7 @@
 	<classpathentry kind="lib" path="lib/freetts-jsapi10.jar"/>
 	<classpathentry kind="lib" path="lib/freetts.jar"/>
 	<classpathentry kind="lib" path="lib/mbrola.jar"/>
+	<classpathentry kind="lib" path="lib/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jsoup-1.12.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

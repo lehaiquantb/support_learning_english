@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,7 +51,8 @@ public class Util1 {
 		return null;
 	}
 
-	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, int width, int height) {
+	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, String kewWord, int width,
+			int height) {
 		try {
 			if (pathFile == null) {
 				return getImageIconResize(kClass, "NoImageAvailable.jpg", width, height);
@@ -60,6 +62,16 @@ public class Util1 {
 				BufferedImage myPicture = ImageIO.read(file);
 				Image newImg = myPicture.getScaledInstance(width, height, Image.SCALE_DEFAULT);
 				return new ImageIcon(newImg);
+			}
+			if (kewWord != null) {
+				String url = UrlImage.getUrlImage(kewWord);
+				if (url != null) {
+					URL img = new URL(url);
+					ImageIcon imageIcon = new ImageIcon(img);
+					Image image = imageIcon.getImage();
+					image = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+					return new ImageIcon(image);
+				}
 			} else {
 				return getImageIconResize(kClass, "NoImageAvailable.jpg", width, height);
 			}

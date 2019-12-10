@@ -66,8 +66,8 @@ public class GenerateWord extends AbstractController {
 //			System.out.println(listBoxs.get(i).getText());
 //		}
 		contentView.getPanel_Image().removeAll();
-		contentView.getPanel_Image()
-				.add(new JLabel(Util1.getImageIconResizeByPath(getClass(), wordModel.getPathOfImageFile(), 200, 179)));
+		contentView.getPanel_Image().add(new JLabel(Util1.getImageIconResizeByPath(getClass(),
+				wordModel.getPathOfImageFile(), wordModel.getWordOrPhrase(), 200, 179)));
 		contentView.getPanel_Image().revalidate();
 		contentView.getPanel_Image().repaint();
 
