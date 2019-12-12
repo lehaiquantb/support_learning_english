@@ -1,6 +1,7 @@
 package InsertDataToDatabase;
 
 import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,11 +13,14 @@ import model.WordModel;
 public class InsertData {
 
 	public InsertData() {
-		
+
 	}
 
-	public void run() throws FileNotFoundException {
+	public void run() throws FileNotFoundException, UnsupportedEncodingException {
 		FilterDataFromDictFile filter = new FilterDataFromDictFile();
+		filter.run();
+		filter.filter();
+		filter.setTagAndPathFile("", "", "#tag");
 //		int size = filter.listWords.size();
 //		System.out.println(size);
 //		System.out.println(filter.listWords.get(0).getPathOfAudioFile());

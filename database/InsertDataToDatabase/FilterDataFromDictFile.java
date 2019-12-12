@@ -1,9 +1,14 @@
 package InsertDataToDatabase;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -11,6 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import model.WordModel;
+import util.UrlImage;
 
 /**
  * @author quan.lh173316
@@ -21,23 +27,20 @@ public class FilterDataFromDictFile {
 	ArrayList<WordModel> listWords;
 	int totalWords;
 
-	public FilterDataFromDictFile() throws FileNotFoundException {
-		// TODO Auto-generated constructor stub
+	public FilterDataFromDictFile() throws FileNotFoundException, UnsupportedEncodingException {
 		listWords = new ArrayList<WordModel>();
-		run();
-		filter();
-		setTagAndPathFile("", "", "#Tag");
 	}
 
 	public void run() throws FileNotFoundException {
 		Scanner sc = null;
 		File file = new File("D:\\Study\\20191\\OOP\\data\\EV_109k\\anhviet109K.dict");
 		list = new ArrayList<String>();
+		String q;
 		try {
 			sc = new Scanner(new BufferedReader(new FileReader(file)));
 			sc.useDelimiter("@");
 			while (sc.hasNext()) {
-				String q = sc.next();
+				q = sc.next();
 				q = "@" + q;
 				list.add(q);
 				// System.out.println(q);
@@ -51,14 +54,44 @@ public class FilterDataFromDictFile {
 		}
 	}
 
-	public void filter() {
+	public void createFileUrlImage() throws IOException {
+		this.run();
+		// PrintWriter writer = new PrintWriter("url-image.txt", "UTF-8");
+		BufferedWriter output = new BufferedWriter(new FileWriter("url-image.txt", true));
+		for (int i = 1000; i < 1200; i++) {
+			Matcher m1 = Pattern.compile("^@([^\\n\\/]+(?=[ |\\n]))").matcher(list.get(i));
+			Matcher m0 = Pattern.compile("^@[^\\n']+[(?= \\n)]").matcher(list.get(i));
+			String url;
+			String word;
+			if (m1.find()) {
+				word = m1.group(1);
+				url = UrlImage.getUrlImage(word);
+			} else if (m0.find()) {
+				word = m0.group();
+				url = UrlImage.getUrlImage(word);
+			} else {
+				continue;
+			}
+			System.out.println(url);
+			// writer.println(word + "=>" + url);
+			output.append("\r\n" + word + "=>" + url);
+		}
+		// writer.close();
+		output.close();
+	}
+
+	public void filter() throws FileNotFoundException, UnsupportedEncodingException {
+
+		// int i = 0;
 		for (String str : list) {
+			// i++;
 			WordModel word = new WordModel();
 			Matcher m1 = Pattern.compile("^@([^\\n\\/]+(?=[ |\\n]))").matcher(str);
 			Matcher m2 = Pattern.compile("\\/.+\\/").matcher(str);
 			Matcher m3 = Pattern.compile("\\*[ ]*(.+)(\\n)*([^*]+)").matcher(str);
 			Matcher m4 = Pattern.compile("(\\n)([^@\\/]+)").matcher(str);
 			Matcher m0 = Pattern.compile("^@[^\\n']+[(?= \\n)]").matcher(str);
+
 			// System.out.println(">>>" + str +"<<<");
 
 			if (m1.find()) {
@@ -76,6 +109,7 @@ public class FilterDataFromDictFile {
 				}
 			}
 
+			//filter typeOfWord and corresponding meaning
 			HashMap<String, String> hashMap = new HashMap<String, String>();
 			while (m3.find()) {
 				hashMap.put(m3.group(1), m3.group(3));
@@ -90,6 +124,9 @@ public class FilterDataFromDictFile {
 			}
 
 			listWords.add(word);
+//			if (i == 20) {
+//				break;
+//			}
 		}
 	}
 

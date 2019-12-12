@@ -1,4 +1,4 @@
-package util;
+package test;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,6 +10,7 @@ import javax.swing.border.TitledBorder;
 
 import dao.impl.WordDAO;
 import model.WordModel;
+import util.Util1;
 
 public class Test {
 
@@ -31,26 +32,27 @@ public class Test {
 //		wordModel.setSuggest("suuu");
 //		wordDAO.saveWord(wordModel);
 
-	    JPanel middlePanel = new JPanel ();
-	    //middlePanel.setBorder ( new TitledBorder ( new EtchedBorder (), "Display Area" ) );
+		JPanel middlePanel = new JPanel();
+		// middlePanel.setBorder ( new TitledBorder ( new EtchedBorder (), "Display
+		// Area" ) );
 
-	    // create the middle panel components
+		// create the middle panel components
 
-	    JTextArea display = new JTextArea ( 10, 9 );
-	    display.setText(Util1.getMeaningTest());
-	    display.setEditable ( false ); // set textArea non-editable
-	    JScrollPane scroll = new JScrollPane ( display );
-	    scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS );
+		JTextArea display = new JTextArea(10, 9);
+		display.setText(Util1.getMeaningTest());
+		display.setEditable(false); // set textArea non-editable
+		JScrollPane scroll = new JScrollPane(display);
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-	    //Add Textarea in to middle panel
-	    middlePanel.add ( scroll );
+		// Add Textarea in to middle panel
+		middlePanel.add(scroll);
 
-	    // My code
-	    JFrame frame = new JFrame ();
-	    frame.add ( middlePanel );
-	    frame.pack ();
-	    frame.setLocationRelativeTo ( null );
-	    frame.setVisible ( true );
+		// My code
+		JFrame frame = new JFrame();
+		frame.add(middlePanel);
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
 	}
 
 }

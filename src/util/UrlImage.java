@@ -12,24 +12,24 @@ import org.jsoup.select.Elements;
 
 public class UrlImage {
 
+	private final static String USER_AGENT = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
+
 	public UrlImage() {
 
 	}
 
-	public static String getUrlImage(String kewWord) {
+	public static String getUrlImage(String keyWord) {
 		// can only grab first 100 results
-		String userAgent = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36";
-		String url = "https://www.google.com/search?site=imghp&tbm=isch&source=hp&q=" + kewWord + "&gws_rd=cr";
+		String url = "https://www.google.com/search?site=imghp&tbm=isch&source=hp&q=" + keyWord + "&gws_rd=cr";
 
 		// List<String> resultUrls = new ArrayList<String>();
 
 		try {
-			org.jsoup.nodes.Document doc = Jsoup.connect(url).userAgent(userAgent).referrer("https://www.google.com/")
+			org.jsoup.nodes.Document doc = Jsoup.connect(url).userAgent(USER_AGENT).referrer("https://www.google.com/")
 					.get();
 
 			Elements elements = doc.select("div.rg_meta");
 
-			int i = 0;
 			JSONObject jsonObject;
 			for (org.jsoup.nodes.Element element : elements) {
 				if (element.childNodeSize() > 0) {

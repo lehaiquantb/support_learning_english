@@ -51,7 +51,7 @@ public class Util1 {
 		return null;
 	}
 
-	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, String kewWord, int width,
+	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, String keyWord, int width,
 			int height) {
 		try {
 			if (pathFile == null) {
@@ -63,8 +63,8 @@ public class Util1 {
 				Image newImg = myPicture.getScaledInstance(width, height, Image.SCALE_DEFAULT);
 				return new ImageIcon(newImg);
 			}
-			if (kewWord != null) {
-				String url = UrlImage.getUrlImage(kewWord);
+			if (keyWord != null) {
+				String url = UrlImage.getUrlImage(keyWord);
 				if (url != null) {
 					URL img = new URL(url);
 					ImageIcon imageIcon = new ImageIcon(img);
