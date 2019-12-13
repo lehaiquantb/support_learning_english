@@ -25,7 +25,7 @@ import util.UrlImage;
 public class FilterDataFromDictFile {
 	ArrayList<String> list;
 	ArrayList<WordModel> listWords;
-	int totalWords;
+	public int totalWords;
 
 	public FilterDataFromDictFile() throws FileNotFoundException, UnsupportedEncodingException {
 		listWords = new ArrayList<WordModel>();
@@ -45,6 +45,7 @@ public class FilterDataFromDictFile {
 				list.add(q);
 				// System.out.println(q);
 			}
+			System.out.println("Total word : " + list.size());
 		} finally {
 			list.remove(0);
 			totalWords = list.size();
@@ -54,11 +55,30 @@ public class FilterDataFromDictFile {
 		}
 	}
 
+	public void getListWordOrPhrase() {
+		ArrayList<String> listWords = new ArrayList<String>();
+	}
+
+	public String getWordOrPhrase(int i) {
+		String word;
+		Matcher m1 = Pattern.compile("^@([^\\n\\/]+(?=[ |\\n]))").matcher(list.get(i));
+		Matcher m0 = Pattern.compile("^@[^\\n']+[(?= \\n)]").matcher(list.get(i));
+		if (m1.find()) {
+			word = m1.group(1);
+		} else if (m0.find()) {
+			word = m0.group();
+		} else {
+			return null;
+		}
+		return word;
+	}
+
 	public void createFileUrlImage() throws IOException {
 		this.run();
 		// PrintWriter writer = new PrintWriter("url-image.txt", "UTF-8");
+		long startTime = System.nanoTime();
 		BufferedWriter output = new BufferedWriter(new FileWriter("url-image.txt", true));
-		for (int i = 1000; i < 1200; i++) {
+		for (int i = 26000; i < 27000; i++) {
 			Matcher m1 = Pattern.compile("^@([^\\n\\/]+(?=[ |\\n]))").matcher(list.get(i));
 			Matcher m0 = Pattern.compile("^@[^\\n']+[(?= \\n)]").matcher(list.get(i));
 			String url;
@@ -78,6 +98,9 @@ public class FilterDataFromDictFile {
 		}
 		// writer.close();
 		output.close();
+		System.out.println("Total time to excute 1000 words in millis= " + (System.nanoTime() - startTime) / 1000000);
+		// Total time to excute 1000 words in millis = 820798
+		// millis,778080,791245,778952,798424
 	}
 
 	public void filter() throws FileNotFoundException, UnsupportedEncodingException {
@@ -109,7 +132,7 @@ public class FilterDataFromDictFile {
 				}
 			}
 
-			//filter typeOfWord and corresponding meaning
+			// filter typeOfWord and corresponding meaning
 			HashMap<String, String> hashMap = new HashMap<String, String>();
 			while (m3.find()) {
 				hashMap.put(m3.group(1), m3.group(3));

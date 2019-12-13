@@ -34,7 +34,7 @@ public class UrlImageFromGgSearch {
 	public static void main(String[] args) throws SQLException, IOException {
 //		DataModel dataModel = new DataModel();
 //		ArrayList<WordModel> arrayList = (ArrayList<WordModel>) dataModel.getListAllWordModels();
-		
+
 //		int max = 0;
 //		int count = 0;
 //		int current = 0;
@@ -55,7 +55,7 @@ public class UrlImageFromGgSearch {
 //		}
 
 		FilterDataFromDictFile filter = new FilterDataFromDictFile();
-		filter.createFileUrlImage();
+		//filter.createFileUrlImage();
 
 //		System.out.println(count);
 //		System.out.println(max);
@@ -71,17 +71,18 @@ public class UrlImageFromGgSearch {
 //		File file = new File("url-image.txt");
 //		ArrayList<String> list = new ArrayList<String>();
 //		String q;
-//		
+//
 //		try {
 //			sc = new Scanner(new BufferedReader(new FileReader(file)));
 //			sc.useDelimiter("\r\n");
-//			
+//
 //			while (sc.hasNext()) {
 //				q = sc.next();
 //				list.add(q);
-//				//System.out.println("[" + q + "]");
+//				// System.out.println("[" + q + "]");
 //			}
 //		} finally {
+//			System.out.println("Total url: " + list.size());
 //			if (sc != null) {
 //				sc.close();
 //			}
@@ -96,12 +97,15 @@ public class UrlImageFromGgSearch {
 		 * if (sc != null) { sc.close(); } }
 		 */
 
-//		int i = 0;
+//		int i = 1;
 //		for (String string : list) {
 //			matcher = Pattern.compile("(" + arrayList.get(i).getWordOrPhrase() + "=>)" + "([\\S]+)").matcher(string);
 //			if (matcher.find()) {
 //				System.out.println(arrayList.get(i).getWordOrPhrase() + "=>" + matcher.group(2));
 //				i++;
+//			}
+//			if (i == 10) {
+//				break;
 //			}
 //		}
 
