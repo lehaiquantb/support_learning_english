@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -55,8 +56,8 @@ public class FilterDataFromDictFile {
 		}
 	}
 
-	public void getListWordOrPhrase() {
-		ArrayList<String> listWords = new ArrayList<String>();
+	public List<WordModel> getSubListWordOrPhrase(int begin, int end) {
+		return this.listWords.subList(begin, end);
 	}
 
 	public String getWordOrPhrase(int i) {
@@ -78,7 +79,7 @@ public class FilterDataFromDictFile {
 		// PrintWriter writer = new PrintWriter("url-image.txt", "UTF-8");
 		long startTime = System.nanoTime();
 		BufferedWriter output = new BufferedWriter(new FileWriter("url-image.txt", true));
-		for (int i = 26000; i < 27000; i++) {
+		for (int i = 53000; i < 54000; i++) {
 			Matcher m1 = Pattern.compile("^@([^\\n\\/]+(?=[ |\\n]))").matcher(list.get(i));
 			Matcher m0 = Pattern.compile("^@[^\\n']+[(?= \\n)]").matcher(list.get(i));
 			String url;
@@ -100,7 +101,8 @@ public class FilterDataFromDictFile {
 		output.close();
 		System.out.println("Total time to excute 1000 words in millis= " + (System.nanoTime() - startTime) / 1000000);
 		// Total time to excute 1000 words in millis = 820798
-		// millis,778080,791245,778952,798424
+		// millis,778080,791245,778952,798424,827834,803733,823075,801493,804622,840809,853679,830052,855652,832950,847551,801021,791164,813049,817175
+		// 888517,876462,854863,838200,855629,826708,835792,832896,1602703,821430
 	}
 
 	public void filter() throws FileNotFoundException, UnsupportedEncodingException {

@@ -4,10 +4,14 @@ import util.JTextFieldBox;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -33,6 +37,7 @@ public class DataModel {
 	private WordModel randomWordModel;
 	private HashMap<String, WordModel> wordMapWordModel;
 	private HashMap<String, List<WordModel>> tagMapListWordModel;
+	private SortedSet<WordModel> sortedSetWordModels;
 
 	/**
 	 * @param mutil tag
@@ -52,12 +57,48 @@ public class DataModel {
 		setTotalWordModelByMode();
 	}
 
-	public void setListWordModelsByModeTime() {
+	public void setListWordModelsByModeTime(Timestamp dateFrom, Timestamp dateTo) {
+		Timestamp first = this.sortedSetWordModels.first().getDateAdded();
+		Timestamp last = this.sortedSetWordModels.last().getDateAdded();
+		// System.out.println("First = " + first.getTime());
+		// System.out.println("Last = " + last.getTime());
+		if (dateFrom.compareTo(last) > 0 || dateTo.compareTo(first) <= 0) {
+			this.listWordModelsByMode.clear();
+		} else {
+			SortedSet<WordModel> newSet;
+			WordModel wordModelFrom = new WordModel();
+			wordModelFrom.setDateAdded(dateFrom);
+			WordModel wordModelTo = new WordModel();
+			wordModelTo.setDateAdded(dateTo);
+			// System.out.println("Begin = " + wordModelFrom.getDateAdded().getTime());
+			// System.out.println("End = " + wordModelTo.getDateAdded().getTime());
+			newSet = this.sortedSetWordModels.subSet(wordModelFrom, wordModelTo);
+			this.listWordModelsByMode = new ArrayList<WordModel>(newSet);
+			// System.out.println(newSet.size());
+		}
+//			SortedSet<WordModel> newSet = new TreeSet<WordModel>();
+//			WordModel wordModelFrom = new WordModel();
+//			wordModelFrom.setDateAdded(dateFrom);
+//			WordModel wordModelTo = new WordModel();
+//			wordModelTo.setDateAdded(dateTo);
+//			WordModel wordModelToCompare = new WordModel();
+//			dateTo.setTime(dateTo.getTime() + 1);
+//			wordModelToCompare.setDateAdded(dateTo);
+//
+//			this.sortedSetWordModels.add(wordModelFrom);
+//			this.sortedSetWordModels.add(wordModelToCompare);
+//			System.out.println("First: " + this.sortedSetWordModels.first().getDateAdded().getTime());
+//			System.out.println("Last: " + this.sortedSetWordModels.last().getDateAdded().getTime());
+//			this.sortedSetWordModels = this.sortedSetWordModels.subSet(wordModelFrom, wordModelTo);
 		setTotalWordModelByMode();
 	}
 
 	public void setTotalWordModelByMode() {
 		this.totalWordModelByMode = this.listWordModelsByMode.size();
+	}
+
+	public void setSortedSetWordModels() {
+		this.sortedSetWordModels = new TreeSet<WordModel>(this.listAllWordModels);
 	}
 
 	/**
@@ -239,6 +280,7 @@ public class DataModel {
 
 	public DataModel() throws SQLException {
 		setListAllWordModels();
+		setSortedSetWordModels();
 		setWordMapWordModel();
 		setMatchWord();
 		setTagMapListWordModel();
@@ -248,6 +290,7 @@ public class DataModel {
 
 	public void update() {
 		this.listAllWordModels = wordDAO.getAllWord();
+		this.setSortedSetWordModels();
 		this.setTotalWordModel(listAllWordModels.size());
 		HashMap<String, WordModel> newWordMapWordModel = new HashMap<String, WordModel>();
 		for (WordModel wordModel : listAllWordModels) {

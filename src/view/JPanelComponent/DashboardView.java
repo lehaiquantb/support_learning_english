@@ -20,14 +20,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Properties;
 
 import javax.swing.SwingConstants;
+
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
+import javax.swing.JInternalFrame;
+import org.jdatepicker.DateModel;
+import javax.swing.JFormattedTextField.AbstractFormatter;
+import org.jdatepicker.util.JDatePickerUtil;
+import java.awt.Panel;
 
 /**
  * @author quan.lh173316
@@ -49,10 +63,19 @@ public class DashboardView extends JPanel {
 	private DefaultListModel<String> defaultListModel;
 	private JButton btnPlus;
 	private JButton btnRefresh;
+	private JDatePickerImpl datePickerFrom;
+	private UtilDateModel dateModelFrom;
+	private JDatePanelImpl datePanelFrom;
+	private UtilDateModel dateModelTo;
+	private JDatePanelImpl datePanelTo;
+	private JDatePickerImpl datePickerTo;
+	private JLabel lblTextTo;
+	private JLabel lblTextFrom;
 
 	/**
 	 * 
 	 */
+
 	public DashboardView() {
 		setBackground(SystemColor.activeCaption);
 		this.setBounds(0, 0, 232, 514);
@@ -67,7 +90,7 @@ public class DashboardView extends JPanel {
 		cB_ModeLearn.setBackground(Color.WHITE);
 		cB_ModeLearn.addItem("default");
 		cB_ModeLearn.addItem("By HashTags");
-		//cB_ModeLearn.addItem("By Time");
+		cB_ModeLearn.addItem("By Date");
 		cB_ModeLearn.setSelectedIndex(0);
 		cB_ModeLearn.setBounds(75, 116, 147, 35);
 		this.add(cB_ModeLearn);
@@ -76,7 +99,7 @@ public class DashboardView extends JPanel {
 		cB_LevelLearn.setModel(new DefaultComboBoxModel<String>(
 				new String[] { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7" }));
 		cB_LevelLearn.setSelectedIndex(0);
-		cB_LevelLearn.setBounds(75, 196, 147, 35);
+		cB_LevelLearn.setBounds(75, 215, 147, 35);
 		this.add(cB_LevelLearn);
 
 		btnTutorial = new JButton("");
@@ -93,7 +116,7 @@ public class DashboardView extends JPanel {
 
 		lblLevel = new JLabel("Level");
 		lblLevel.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblLevel.setBounds(10, 195, 65, 35);
+		lblLevel.setBounds(10, 215, 65, 35);
 		add(lblLevel);
 
 		lblTotalModel = new JLabel("0");
@@ -107,7 +130,7 @@ public class DashboardView extends JPanel {
 
 		panelModeTag = new JPanel();
 		panelModeTag.setVisible(false);
-		panelModeTag.setBounds(10, 162, 212, 22);
+		panelModeTag.setBounds(10, 155, 212, 22);
 		add(panelModeTag);
 		panelModeTag.setLayout(null);
 
@@ -126,6 +149,108 @@ public class DashboardView extends JPanel {
 		btnPlus.setIcon(Util1.getImageIconResize(getClass(), "iconPlus.png", 17, 17));
 		panelModeTag.add(btnPlus);
 
+		dateModelFrom = new UtilDateModel();
+		dateModelFrom.setSelected(true);
+		Properties p = new Properties();
+		p.put("text.today", "Today");
+		p.put("text.month", "Month");
+		p.put("text.year", "Year");
+		datePanelFrom = new JDatePanelImpl(dateModelFrom, p);
+
+		lblTextFrom = new JLabel("From");
+		lblTextFrom.setVisible(false);
+		lblTextFrom.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblTextFrom.setFont(new Font("Arial", lblTextFrom.getFont().getStyle(), lblTextFrom.getFont().getSize()));
+		lblTextFrom.setBounds(10, 160, 48, 24);
+		add(lblTextFrom);
+
+		dateModelTo = new UtilDateModel();
+		dateModelTo.setSelected(true);
+		datePanelTo = new JDatePanelImpl(dateModelTo, p);
+		datePickerTo = new JDatePickerImpl(datePanelTo, new DateLabelFormatter());
+		datePickerTo.setVisible(false);
+		datePickerTo.getJFormattedTextField().setFont(new Font("Tahoma", Font.BOLD, 11));
+		datePickerTo.setLocation(75, 188);
+		datePickerTo.setSize(150, 24);
+		this.add(datePickerTo);
+
+		lblTextTo = new JLabel("To");
+		lblTextTo.setVisible(false);
+		lblTextTo.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblTextTo.setFont(new Font("Arial", lblTextTo.getFont().getStyle(), lblTextTo.getFont().getSize()));
+		lblTextTo.setBounds(10, 188, 48, 24);
+		add(lblTextTo);
+
+		datePickerFrom = new JDatePickerImpl(datePanelFrom, new DateLabelFormatter());
+		datePickerFrom.setVisible(false);
+		datePickerFrom.setBounds(75, 160, 150, 24);
+		add(datePickerFrom);
+		datePickerFrom.getJFormattedTextField().setFont(new Font("Tahoma", Font.BOLD, 11));
+
+	}
+
+	public JLabel getLblTextTo() {
+		return lblTextTo;
+	}
+
+	public void setLblTextTo(JLabel lblTextTo) {
+		this.lblTextTo = lblTextTo;
+	}
+
+	public JLabel getLblTextFrom() {
+		return lblTextFrom;
+	}
+
+	public void setLblTextFrom(JLabel lblTextFrom) {
+		this.lblTextFrom = lblTextFrom;
+	}
+
+	public JDatePickerImpl getDatePickerFrom() {
+		return datePickerFrom;
+	}
+
+	public void setDatePickerFrom(JDatePickerImpl datePickerFrom) {
+		this.datePickerFrom = datePickerFrom;
+	}
+
+	public UtilDateModel getDateModelFrom() {
+		return dateModelFrom;
+	}
+
+	public void setDateModelFrom(UtilDateModel dateModelFrom) {
+		this.dateModelFrom = dateModelFrom;
+	}
+
+	public JDatePanelImpl getDatePanelFrom() {
+		return datePanelFrom;
+	}
+
+	public void setDatePanelFrom(JDatePanelImpl datePanelFrom) {
+		this.datePanelFrom = datePanelFrom;
+	}
+
+	public UtilDateModel getDateModelTo() {
+		return dateModelTo;
+	}
+
+	public void setDateModelTo(UtilDateModel dateModelTo) {
+		this.dateModelTo = dateModelTo;
+	}
+
+	public JDatePanelImpl getDatePanelTo() {
+		return datePanelTo;
+	}
+
+	public void setDatePanelTo(JDatePanelImpl datePanelTo) {
+		this.datePanelTo = datePanelTo;
+	}
+
+	public JDatePickerImpl getDatePickerTo() {
+		return datePickerTo;
+	}
+
+	public void setDatePickerTo(JDatePickerImpl datePickerTo) {
+		this.datePickerTo = datePickerTo;
 	}
 
 	public JTextField getTextFieldTags() {
@@ -218,5 +343,27 @@ public class DashboardView extends JPanel {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	class DateLabelFormatter extends AbstractFormatter {
+
+		private String datePattern = "dd/MM/yyyy";
+		private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
+
+		@Override
+		public Object stringToValue(String text) throws ParseException {
+			return dateFormatter.parseObject(text);
+		}
+
+		@Override
+		public String valueToString(Object value) throws ParseException {
+			if (value != null) {
+				Calendar cal = (Calendar) value;
+				return dateFormatter.format(cal.getTime());
+			}
+
+			return "";
+		}
+
 	}
 }

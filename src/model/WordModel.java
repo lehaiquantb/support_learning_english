@@ -8,7 +8,7 @@ import java.util.HashMap;
  * @author quan.lh173316
  *
  */
-public class WordModel {
+public class WordModel implements Comparable<WordModel> {
 
 	private Long id;
 	private String wordOrPhrase;
@@ -174,6 +174,14 @@ public class WordModel {
 	 */
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	@Override
+	public int compareTo(WordModel o) {
+		if (this.getDateAdded().compareTo(o.getDateAdded()) == 0) {
+			return 1;
+		} else
+			return this.getDateAdded().compareTo(o.getDateAdded());
 	}
 
 }

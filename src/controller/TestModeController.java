@@ -6,12 +6,17 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 import model.DataModel;
 import view.MainFrame;
@@ -23,10 +28,15 @@ import view.MainFrame;
 public class TestModeController extends AbstractController {
 
 	private JComboBox<String> comboBox;
+	private Timestamp dateFrom;
+	private Timestamp dateTo;
+	private Calendar cal = Calendar.getInstance();
 
 	public TestModeController(DataModel dataModel, MainFrame mainFrame) {
 		super(dataModel, mainFrame);
 		this.comboBox = dashboardView.getcB_ModeLearn();
+		dateFrom = new Timestamp(0);
+		dateTo = new Timestamp(0);
 	}
 
 	public void addListener() {
@@ -38,6 +48,10 @@ public class TestModeController extends AbstractController {
 					mainFrame.getFrame().getLayeredPane().revalidate();
 					mainFrame.getFrame().getLayeredPane().repaint();
 					dashboardView.getPanelModeTag().setVisible(false);
+					dashboardView.getDatePickerFrom().setVisible(false);
+					dashboardView.getDatePickerTo().setVisible(false);
+					dashboardView.getLblTextFrom().setVisible(false);
+					dashboardView.getLblTextTo().setVisible(false);
 					dashboardView.getTextFieldTags().setText(null);
 					dashboardView.getTextFieldTags().setEditable(true);
 					dashboardView.getBtnRefresh().setEnabled(true);
@@ -46,9 +60,17 @@ public class TestModeController extends AbstractController {
 					dashboardView.getLblTotalModel()
 							.setText(dataModel.getTotalWordModelByMode() + "/" + dataModel.getTotalWordModel());
 				} else if (comboBox.getSelectedIndex() == 1) {
+					dashboardView.getDatePickerFrom().setVisible(false);
+					dashboardView.getDatePickerTo().setVisible(false);
+					dashboardView.getLblTextFrom().setVisible(false);
+					dashboardView.getLblTextTo().setVisible(false);
 					dashboardView.getPanelModeTag().setVisible(true);
 				} else if (comboBox.getSelectedIndex() == 2) {
-
+					dashboardView.getPanelModeTag().setVisible(false);
+					dashboardView.getDatePickerFrom().setVisible(true);
+					dashboardView.getLblTextFrom().setVisible(true);
+					dashboardView.getLblTextTo().setVisible(true);
+					dashboardView.getDatePickerTo().setVisible(true);
 				}
 
 			}
@@ -60,7 +82,7 @@ public class TestModeController extends AbstractController {
 				mainFrame.getFrame().getLayeredPane().remove(mainFrame.getPanelSearchTag());
 				mainFrame.getFrame().getLayeredPane().revalidate();
 				mainFrame.getFrame().getLayeredPane().repaint();
-				if (setListModel(dashboardView.getTextFieldTags().getText())) {
+				if (setListModelByTag(dashboardView.getTextFieldTags().getText())) {
 					mainFrame.getFrame().getLayeredPane().add(mainFrame.getPanelSearchTag());
 					mainFrame.getFrame().getLayeredPane().revalidate();
 					mainFrame.getFrame().getLayeredPane().repaint();
@@ -104,9 +126,58 @@ public class TestModeController extends AbstractController {
 			}
 		});
 
+		dashboardView.getDatePanelFrom().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cal.setTime(dashboardView.getDateModelFrom().getValue());
+				cal.set(Calendar.HOUR_OF_DAY, 00);
+				cal.set(Calendar.MINUTE, 00);
+				cal.set(Calendar.SECOND, 00);
+				// dateFrom = new Timestamp(cal.getTimeInMillis());
+				dateFrom.setTime(cal.getTimeInMillis());
+
+				cal.setTime(dashboardView.getDateModelTo().getValue());
+				cal.set(Calendar.HOUR_OF_DAY, 24);
+				cal.set(Calendar.MINUTE, 00);
+				cal.set(Calendar.SECOND, 00);
+				if ((cal.getTimeInMillis() - dateFrom.getTime()) / 1000 <= 0) {
+					JOptionPane.showMessageDialog(null, "You must enter an appropriate time period !");
+				} else {
+					dateTo.setTime(cal.getTimeInMillis());
+					dataModel.setListWordModelsByModeTime(dateFrom, dateTo);
+					mainFrame.update();
+				}
+			}
+		});
+		dashboardView.getDatePanelTo().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cal.setTime(dashboardView.getDateModelFrom().getValue());
+				cal.set(Calendar.HOUR_OF_DAY, 00);
+				cal.set(Calendar.MINUTE, 00);
+				cal.set(Calendar.SECOND, 00);
+				dateFrom.setTime(cal.getTimeInMillis());
+				// System.out.println("dateFrom: " + cal.getTime().toString() + "=" +
+				// dateFrom.getTime());
+
+				cal.setTime(dashboardView.getDateModelTo().getValue());
+				cal.set(Calendar.HOUR_OF_DAY, 24);
+				cal.set(Calendar.MINUTE, 00);
+				cal.set(Calendar.SECOND, 00);
+				if ((cal.getTimeInMillis() - dateFrom.getTime()) / 1000 <= 0) {
+					JOptionPane.showMessageDialog(null, "You must enter an appropriate time period !");
+				} else {
+					dateTo.setTime(cal.getTimeInMillis());
+					// System.out.println("dateTo: " + cal.getTime().toString() + "=" +
+					dataModel.setListWordModelsByModeTime(dateFrom, dateTo);
+					mainFrame.update();
+				}
+			}
+		});
+
 	}
 
-	boolean setListModel(String text) {
+	boolean setListModelByTag(String text) {
 		boolean check = false;
 		DefaultListModel<String> newListModel = new DefaultListModel<String>();
 		Pattern pattern = Pattern.compile("[\\S]*" + text + "[\\S]*");

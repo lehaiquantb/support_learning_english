@@ -8,6 +8,7 @@ import java.util.List;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import model.DataModel;
 import model.WordModel;
@@ -78,7 +79,12 @@ public class CheckWordController extends AbstractController {
 					contentView.getPanel_WordOrPhrase().removeAll();
 					contentView.getPanel_WordOrPhrase().revalidate();
 					contentView.getPanel_WordOrPhrase().repaint();
-					contentView.getGenerateWord().run();
+					if (dataModel.getListWordModelsByMode().isEmpty()) {
+						JOptionPane.showMessageDialog(null,
+								"There are no words to display. Please correct the test mode!");
+					} else {
+						contentView.getGenerateWord().run();
+					}
 				}
 			}
 		});

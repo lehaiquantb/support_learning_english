@@ -1,0 +1,687 @@
+[
+	{
+		"wordOrPhrase": "a",
+		"pronounce": "/ei, ə/",
+		"typeOfWord": {
+			"danh từ,  số nhiều as,  a\u0027s": "- (thông tục) loại a, hạng nhất, hạng tốt nhất hạng rất tốt\n\u003dhis health is a+ sức khoẻ anh ta vào loại a\n- (âm nhạc) la\n\u003da sharp+ la thăng\n\u003da flat+ la giáng\n- người giả định thứ nhất; trường hợp giả định thứ nhất\n\u003dfrom a to z+ từ đầu đến đuôi, tường tận\n\u003dnot to know a from b+ không biết tí gì cả; một chữ bẻ đôi cũng không biết\n",
+			"giới từ": "- mỗi, mỗi một\n\u003dtwice a week+ mỗi tuần hai lần\n\n",
+			"mạo từ": "- một; một (như kiểu); một (nào đó)\n\u003da very cold day+ một ngày rất lạnh\n\u003da dozen+ một tá\n\u003da few+ một ít\n\u003dall of a size+ tất cả cùng một cỡ\n\u003da Shakespeare+ một (văn hào như kiểu) Sếch-xpia\n\u003da Mr Nam+ một ông Nam (nào đó)\n- cái, con, chiếc, cuốn, người, đứa...;\n\u003da cup+ cái chén\n\u003da knife+ con dao\n\u003da son of the Party+ người con của Đảng\n\u003da Vietnamese grammar+ cuốn ngữ pháp Việt Nam\n"
+		},
+		"meaning": "*  danh từ,  số nhiều as,  a\u0027s\n- (thông tục) loại a, hạng nhất, hạng tốt nhất hạng rất tốt\n\u003dhis health is a+ sức khoẻ anh ta vào loại a\n- (âm nhạc) la\n\u003da sharp+ la thăng\n\u003da flat+ la giáng\n- người giả định thứ nhất; trường hợp giả định thứ nhất\n\u003dfrom a to z+ từ đầu đến đuôi, tường tận\n\u003dnot to know a from b+ không biết tí gì cả; một chữ bẻ đôi cũng không biết\n*  mạo từ\n- một; một (như kiểu); một (nào đó)\n\u003da very cold day+ một ngày rất lạnh\n\u003da dozen+ một tá\n\u003da few+ một ít\n\u003dall of a size+ tất cả cùng một cỡ\n\u003da Shakespeare+ một (văn hào như kiểu) Sếch-xpia\n\u003da Mr Nam+ một ông Nam (nào đó)\n- cái, con, chiếc, cuốn, người, đứa...;\n\u003da cup+ cái chén\n\u003da knife+ con dao\n\u003da son of the Party+ người con của Đảng\n\u003da Vietnamese grammar+ cuốn ngữ pháp Việt Nam\n*  giới từ\n- mỗi, mỗi một\n\u003dtwice a week+ mỗi tuần hai lần\n\n"
+	},
+	{
+		"wordOrPhrase": "a b c",
+		"pronounce": "/\u0027eibi:\u0027si:/",
+		"typeOfWord": {
+			"danh từ": "- bảng chữ cái\n- khái niệm cơ sở, cơ sở\n\u003da_b_c of chemistry+ khái niệm cơ sở về hoá học, cơ sở hoá học\n- (ngành đường sắt) bảng chỉ đường theo abc\n\n"
+		},
+		"meaning": "*  danh từ\n- bảng chữ cái\n- khái niệm cơ sở, cơ sở\n\u003da_b_c of chemistry+ khái niệm cơ sở về hoá học, cơ sở hoá học\n- (ngành đường sắt) bảng chỉ đường theo abc\n\n"
+	},
+	{
+		"wordOrPhrase": "a b c - book",
+		"pronounce": "/\u0027eibi:\u0027si:buk/",
+		"typeOfWord": {
+			"danh từ": "- sách vỡ lòng, sách học vần\n\n"
+		},
+		"meaning": "*  danh từ\n- sách vỡ lòng, sách học vần\n\n"
+	},
+	{
+		"wordOrPhrase": "a font",
+		"pronounce": "/ɑ:\u0027fɜ:ɳ/",
+		"typeOfWord": {
+			"phó từ": "- thấu triệt, cặn kẽ, rõ ngọn nghành\n\n"
+		},
+		"meaning": "*  phó từ\n- thấu triệt, cặn kẽ, rõ ngọn nghành\n\n"
+	},
+	{
+		"wordOrPhrase": "a fortiori",
+		"pronounce": "/\u0027ei,fɔ:ti\u0027ɔ:rai/",
+		"typeOfWord": {
+			"phó từ": "- huống hồ, huống là\n\n"
+		},
+		"meaning": "*  phó từ\n- huống hồ, huống là\n\n"
+	},
+	{
+		"wordOrPhrase": "a la carte",
+		"pronounce": "/\u0027ɑ:lɑ:\u0027kɑ:t/",
+		"typeOfWord": {
+			"phó từ": "- theo món, gọi theo món, đặt theo món\n\u003dto dine a_la_carte+ ăn cơm gọi theo món\n\n"
+		},
+		"meaning": "*  phó từ\n- theo món, gọi theo món, đặt theo món\n\u003dto dine a_la_carte+ ăn cơm gọi theo món\n\n"
+	},
+	{
+		"wordOrPhrase": "a la mode",
+		"pronounce": "/,ɑ:lə\u0027moud/",
+		"typeOfWord": {
+			"phó từ": "- hợp thời trang, đúng mốt\n\n"
+		},
+		"meaning": "*  phó từ\n- hợp thời trang, đúng mốt\n\n"
+	},
+	{
+		"wordOrPhrase": "a posteriori",
+		"pronounce": "/\u0027eipɔs,teri\u0027ɔ:rai/",
+		"typeOfWord": {
+			"phó từ \u0026 tính từ": "- theo phép quy nạp\n\u003dmethod a_posteriori+ phương pháp quy nạp\n- hậu nghiệm\n\u003dprobability a_posteriori+ (toán học) xác suất hậu nghiệm\n\n"
+		},
+		"meaning": "*  phó từ \u0026 tính từ\n- theo phép quy nạp\n\u003dmethod a_posteriori+ phương pháp quy nạp\n- hậu nghiệm\n\u003dprobability a_posteriori+ (toán học) xác suất hậu nghiệm\n\n"
+	},
+	{
+		"wordOrPhrase": "a priori",
+		"pronounce": "/\u0027eiprai\u0027ɔ:rai/",
+		"typeOfWord": {
+			"danh từ \u0026 phó từ": "- theo cách suy diễn, theo cách diễn dịch\n- tiên nghiệm\n\u003dprobability a_priori+ (toán học) xác xuất tiên nghiệm\n\n"
+		},
+		"meaning": "*  danh từ \u0026 phó từ\n- theo cách suy diễn, theo cách diễn dịch\n- tiên nghiệm\n\u003dprobability a_priori+ (toán học) xác xuất tiên nghiệm\n\n"
+	},
+	{
+		"wordOrPhrase": "a-bomb",
+		"pronounce": "/\u0027ei\u0027bɔm/",
+		"typeOfWord": {
+			"danh từ": "- bom nguyên tử\n\n"
+		},
+		"meaning": "*  danh từ\n- bom nguyên tử\n\n"
+	},
+	{
+		"wordOrPhrase": "a-going",
+		"pronounce": "/ə\u0027gouiɳ/",
+		"typeOfWord": {
+			"tính từ \u0026 phó từ": "- đang chạy, đang chuyển động; đang hoạt động, đang tiến hành\n\u003dto set a-going+ cho chuyển động, cho chạy (máy...)\n\n"
+		},
+		"meaning": "*  tính từ \u0026 phó từ\n- đang chạy, đang chuyển động; đang hoạt động, đang tiến hành\n\u003dto set a-going+ cho chuyển động, cho chạy (máy...)\n\n"
+	},
+	{
+		"wordOrPhrase": "a-plenty",
+		"pronounce": "/ə\u0027plenti/",
+		"typeOfWord": {
+			"phó từ": "- (từ Mỹ,nghĩa Mỹ) nhiều, dồi dào, phong phú\n\n"
+		},
+		"meaning": "*  phó từ\n- (từ Mỹ,nghĩa Mỹ) nhiều, dồi dào, phong phú\n\n"
+	},
+	{
+		"wordOrPhrase": "a-power",
+		"pronounce": "/\u0027ei\u0027pauə/",
+		"typeOfWord": {
+			"danh từ": "- năng lượng nguyên tử\n- cường quốc nguyên tử\n\n"
+		},
+		"meaning": "*  danh từ\n- năng lượng nguyên tử\n- cường quốc nguyên tử\n\n"
+	},
+	{
+		"wordOrPhrase": "a.d.",
+		"pronounce": "/\u0027ei\u0027di:/",
+		"typeOfWord": {
+			"(viết tắt) của Ano Domin": "- sau công nguyên\n\u003d1540 a.d.+ năm 1540 sau công nguyên\n\n"
+		},
+		"meaning": "*  (viết tắt) của Ano Domin\n- sau công nguyên\n\u003d1540 a.d.+ năm 1540 sau công nguyên\n\n"
+	},
+	{
+		"wordOrPhrase": "a.m.",
+		"pronounce": "/\u0027ei\u0027em/",
+		"typeOfWord": {
+			"phó từ": "- (xem) ante_meridiem\n\n"
+		},
+		"meaning": "*  phó từ\n- (xem) ante_meridiem\n\n"
+	},
+	{
+		"wordOrPhrase": "aard-wolf",
+		"pronounce": "/\u0027ɑ:d,wulf/",
+		"typeOfWord": {
+			"danh từ": "- (động vật học) chó sói đất (Nam Phi)\n\n"
+		},
+		"meaning": "*  danh từ\n- (động vật học) chó sói đất (Nam Phi)\n\n"
+	},
+	{
+		"wordOrPhrase": "aasvogel",
+		"pronounce": "/\u0027ɑ:sfougəl/",
+		"typeOfWord": {
+			"danh từ": "- (động vật học) con kên kên (Nam Phi)\n\n"
+		},
+		"meaning": "*  danh từ\n- (động vật học) con kên kên (Nam Phi)\n\n"
+	},
+	{
+		"wordOrPhrase": "aba",
+		"pronounce": "/\u0027ɑ:bə/",
+		"typeOfWord": {
+			"danh từ": "- áo aba (áo ngoài giống hình cái túi người A-Rập)\n\n"
+		},
+		"meaning": "*  danh từ\n- áo aba (áo ngoài giống hình cái túi người A-Rập)\n\n"
+	},
+	{
+		"wordOrPhrase": "abaci",
+		"pronounce": "/\u0027æbəkəs/",
+		"typeOfWord": {
+			"danh từ,  số nhiều abaci,  abacuses": "- bàn tính\n\u003dto move counters of an abacus; to work an abacus+ tính bằng bàn tính, gảy bàn tính\n- (kiến trúc)\n- đầu cột, đỉnh cột\n\n"
+		},
+		"meaning": "*  danh từ,  số nhiều abaci,  abacuses\n- bàn tính\n\u003dto move counters of an abacus; to work an abacus+ tính bằng bàn tính, gảy bàn tính\n- (kiến trúc)\n- đầu cột, đỉnh cột\n\n"
+	},
+	{
+		"wordOrPhrase": "aback",
+		"pronounce": "/ə\u0027bæk/",
+		"typeOfWord": {
+			"phó từ": "- lùi lại, trở lại phía sau\n\u003dto stand aback from+ đứng lùi lại để tránh\n- (hàng hải) bị thổi ép vào cột buồm (buồm)\n\u003dto be taken aback+ (hàng hải) bị gió thổi ép vào cột buồm\n- (nghĩa bóng) sửng sốt, ngạc nhiên\n\u003dto be taken aback by the news+ sửng sốt vì cái tin đó\n\n"
+		},
+		"meaning": "*  phó từ\n- lùi lại, trở lại phía sau\n\u003dto stand aback from+ đứng lùi lại để tránh\n- (hàng hải) bị thổi ép vào cột buồm (buồm)\n\u003dto be taken aback+ (hàng hải) bị gió thổi ép vào cột buồm\n- (nghĩa bóng) sửng sốt, ngạc nhiên\n\u003dto be taken aback by the news+ sửng sốt vì cái tin đó\n\n"
+	},
+	{
+		"wordOrPhrase": "abacus",
+		"pronounce": "/\u0027æbəkəs/",
+		"typeOfWord": {
+			"danh từ,  số nhiều abaci,  abacuses": "- bàn tính\n\u003dto move counters of an abacus; to work an abacus+ tính bằng bàn tính, gảy bàn tính\n- (kiến trúc)\n- đầu cột, đỉnh cột\n\n"
+		},
+		"meaning": "*  danh từ,  số nhiều abaci,  abacuses\n- bàn tính\n\u003dto move counters of an abacus; to work an abacus+ tính bằng bàn tính, gảy bàn tính\n- (kiến trúc)\n- đầu cột, đỉnh cột\n\n"
+	},
+	{
+		"wordOrPhrase": "abaddon",
+		"pronounce": "/ə\u0027bædən/",
+		"typeOfWord": {
+			"danh từ": "- âm ti, địa ngục\n- con quỷ\n\n"
+		},
+		"meaning": "*  danh từ\n- âm ti, địa ngục\n- con quỷ\n\n"
+	},
+	{
+		"wordOrPhrase": "abaft",
+		"pronounce": "/ə\u0027bɑ:ft/",
+		"typeOfWord": {
+			"giới từ": "- (hàng hải) sau, ở đằng sau, ở phía sau\n\u003dabaft the mast+ sau cột buồm\n\n",
+			"phó từ": "- (hàng hải) ở phía sau bánh lái, gần phía bánh lái\n"
+		},
+		"meaning": "*  phó từ\n- (hàng hải) ở phía sau bánh lái, gần phía bánh lái\n*  giới từ\n- (hàng hải) sau, ở đằng sau, ở phía sau\n\u003dabaft the mast+ sau cột buồm\n\n"
+	},
+	{
+		"wordOrPhrase": "abalone",
+		"pronounce": "/,æbə\u0027louni/",
+		"typeOfWord": {
+			"danh từ": "- (từ Mỹ,nghĩa Mỹ) bào ngư\n\n"
+		},
+		"meaning": "*  danh từ\n- (từ Mỹ,nghĩa Mỹ) bào ngư\n\n"
+	},
+	{
+		"wordOrPhrase": "abandon",
+		"pronounce": "/ə\u0027bændən/",
+		"typeOfWord": {
+			"danh từ": "- sự phóng túng, sự tự do, sự buông thả\n\u003dwith abandon+ phóng túng\n\n",
+			"ngoại động từ": "- bộm (nhiếp ảnh) (nhiếp ảnh) (từ Mỹ,nghĩa Mỹ) từ bỏ; bỏ rơi, ruồng bỏ\n\u003dto abandon a hope+ từ bỏ hy vọng\n\u003dto abandon one\u0027s wife and children+ ruồng bỏ vợ con\n\u003dto abandon oneself to+ đắm đuối, chìm đắm vào (nỗi thất vọng...)\n"
+		},
+		"meaning": "*  ngoại động từ\n- bộm (nhiếp ảnh) (nhiếp ảnh) (từ Mỹ,nghĩa Mỹ) từ bỏ; bỏ rơi, ruồng bỏ\n\u003dto abandon a hope+ từ bỏ hy vọng\n\u003dto abandon one\u0027s wife and children+ ruồng bỏ vợ con\n\u003dto abandon oneself to+ đắm đuối, chìm đắm vào (nỗi thất vọng...)\n*  danh từ\n- sự phóng túng, sự tự do, sự buông thả\n\u003dwith abandon+ phóng túng\n\n"
+	},
+	{
+		"wordOrPhrase": "abandoned",
+		"pronounce": "/ə\u0027bændənd/",
+		"typeOfWord": {
+			"tính từ": "- bị bỏ rơi, bị ruồng bỏ\n- phóng đãng, truỵ lạc\n\n"
+		},
+		"meaning": "*  tính từ\n- bị bỏ rơi, bị ruồng bỏ\n- phóng đãng, truỵ lạc\n\n"
+	},
+	{
+		"wordOrPhrase": "abandoner",
+		"pronounce": "/ə\u0027bændənə/",
+		"typeOfWord": {
+			"danh từ": "- (pháp lý) người rút đơn\n\n"
+		},
+		"meaning": "*  danh từ\n- (pháp lý) người rút đơn\n\n"
+	},
+	{
+		"wordOrPhrase": "abandonment",
+		"pronounce": "/ə\u0027bændənmənt/",
+		"typeOfWord": {
+			"danh từ": "- sự bỏ, sự từ bỏ, sự bỏ rơi, sự ruồng bỏ\n- tình trạng bị bỏ rơi, tình trạng bị ruồng bỏ\n- sự phóng túng, sự tự do, sự buông thả\n\n"
+		},
+		"meaning": "*  danh từ\n- sự bỏ, sự từ bỏ, sự bỏ rơi, sự ruồng bỏ\n- tình trạng bị bỏ rơi, tình trạng bị ruồng bỏ\n- sự phóng túng, sự tự do, sự buông thả\n\n"
+	},
+	{
+		"wordOrPhrase": "abase",
+		"pronounce": "/ə\u0027beis/",
+		"typeOfWord": {
+			"ngoại động từ": "- làm hạ phẩm giá, làm mất thể diện, làm nhục\n\u003dto abase one-self+ tự hạ mình\n\n"
+		},
+		"meaning": "*  ngoại động từ\n- làm hạ phẩm giá, làm mất thể diện, làm nhục\n\u003dto abase one-self+ tự hạ mình\n\n"
+	},
+	{
+		"wordOrPhrase": "abasement",
+		"pronounce": "/ə\u0027beismənt/",
+		"typeOfWord": {
+			"danh từ": "- sự làm hạ phẩm giá, sự làm mất thể diện, sự làm nhục\n\n"
+		},
+		"meaning": "*  danh từ\n- sự làm hạ phẩm giá, sự làm mất thể diện, sự làm nhục\n\n"
+	},
+	{
+		"wordOrPhrase": "abash",
+		"pronounce": "/ə\u0027bæʃ/",
+		"typeOfWord": {
+			"ngoại động từ": "- làm bối rối, làm lúng túng, làm luống cuống\n\n"
+		},
+		"meaning": "*  ngoại động từ\n- làm bối rối, làm lúng túng, làm luống cuống\n\n"
+	},
+	{
+		"wordOrPhrase": "abashment",
+		"pronounce": "/ə\u0027bæʃmənt/",
+		"typeOfWord": {
+			"danh từ": "- sự bối rối, sự lúng túng, sự luống cuống\n\n"
+		},
+		"meaning": "*  danh từ\n- sự bối rối, sự lúng túng, sự luống cuống\n\n"
+	},
+	{
+		"wordOrPhrase": "abask",
+		"pronounce": "/ə\u0027bɑ:sk/",
+		"typeOfWord": {
+			"phó từ": "- (thơ ca) dưới ánh nắng, dưới ánh mặt trời, trong ánh lửa ấm\n\n"
+		},
+		"meaning": "*  phó từ\n- (thơ ca) dưới ánh nắng, dưới ánh mặt trời, trong ánh lửa ấm\n\n"
+	},
+	{
+		"wordOrPhrase": "abatable",
+		"pronounce": "/ə\u0027beitəbl/",
+		"typeOfWord": {
+			"tính từ": "- có thể làm dịu, có thể làm yếu đi, có thể giảm bớt\n- có thể hạ, có thể bớt\n- có thể làm nhụt\n- có thể chấm dứt, có thể thanh trừ\n- (pháp lý) có thể huỷ bỏ, có thể thủ tiêu\n\n"
+		},
+		"meaning": "*  tính từ\n- có thể làm dịu, có thể làm yếu đi, có thể giảm bớt\n- có thể hạ, có thể bớt\n- có thể làm nhụt\n- có thể chấm dứt, có thể thanh trừ\n- (pháp lý) có thể huỷ bỏ, có thể thủ tiêu\n\n"
+	},
+	{
+		"wordOrPhrase": "abate",
+		"pronounce": "/ə\u0027beit/",
+		"typeOfWord": {
+			"nội động từ": "- dịu đi, yếu đi, nhụt đi, đỡ, bớt, ngớt\n\u003dpaint abates+ cơn đau dịu đi\n\u003dstorm abates+ cơn bão ngớt\n\n",
+			"ngoại động từ": "- làm dịu đi, làm yếu đi, làm giảm bớt\n\u003dto abate a pain+ làm dịu đau\n- hạ (giá), bớt (giá)\n- làm nhụt (nhụt khí...)\n- làm cùn (lưỡi dao...)\n- thanh toán, làm mất hết (những điều khó chịu, bực bội)\n- (pháp lý) huỷ bỏ, thủ tiêu\n- (kỹ thuật) ram (thép)\n"
+		},
+		"meaning": "*  ngoại động từ\n- làm dịu đi, làm yếu đi, làm giảm bớt\n\u003dto abate a pain+ làm dịu đau\n- hạ (giá), bớt (giá)\n- làm nhụt (nhụt khí...)\n- làm cùn (lưỡi dao...)\n- thanh toán, làm mất hết (những điều khó chịu, bực bội)\n- (pháp lý) huỷ bỏ, thủ tiêu\n- (kỹ thuật) ram (thép)\n*  nội động từ\n- dịu đi, yếu đi, nhụt đi, đỡ, bớt, ngớt\n\u003dpaint abates+ cơn đau dịu đi\n\u003dstorm abates+ cơn bão ngớt\n\n"
+	},
+	{
+		"wordOrPhrase": "abatement",
+		"pronounce": "/ə\u0027beitmənt/",
+		"typeOfWord": {
+			"danh từ": "- sự dịu đi, sự yếu đi, sự nhụt đi, sự giảm bớt, sự đỡ, sự ngớt\n- sự hạ (giá), sự bớt (giá)\n- sự chấm dứt, sự thanh toán\n- (pháp lý) sự huỷ bỏ, sự thủ tiêu\n\u003dabatement of a contract+ sự huỷ bỏ một hợp đồng\n\n"
+		},
+		"meaning": "*  danh từ\n- sự dịu đi, sự yếu đi, sự nhụt đi, sự giảm bớt, sự đỡ, sự ngớt\n- sự hạ (giá), sự bớt (giá)\n- sự chấm dứt, sự thanh toán\n- (pháp lý) sự huỷ bỏ, sự thủ tiêu\n\u003dabatement of a contract+ sự huỷ bỏ một hợp đồng\n\n"
+	},
+	{
+		"wordOrPhrase": "abatis",
+		"pronounce": "/\u0027æbətis/",
+		"typeOfWord": {
+			"danh từ,  số nhiều abatis": "- (quân sự) đống cây chướng ngại, đống cây cản\n\n"
+		},
+		"meaning": "*  danh từ,  số nhiều abatis\n- (quân sự) đống cây chướng ngại, đống cây cản\n\n"
+	},
+	{
+		"wordOrPhrase": "abatised",
+		"pronounce": "/\u0027æbətist/",
+		"typeOfWord": {
+			"tính từ": "- (quân sự) có đống cây chướng ngại, có đống cây cản\n\n"
+		},
+		"meaning": "*  tính từ\n- (quân sự) có đống cây chướng ngại, có đống cây cản\n\n"
+	},
+	{
+		"wordOrPhrase": "abattoir",
+		"pronounce": "/\u0027æbətwɑ:/",
+		"typeOfWord": {
+			"danh từ": "- lò mổ, lò sát sinh\n\n"
+		},
+		"meaning": "*  danh từ\n- lò mổ, lò sát sinh\n\n"
+	},
+	{
+		"wordOrPhrase": "abb",
+		"pronounce": "/æb/",
+		"typeOfWord": {
+			"danh từ": "- (nghành dệt) sợi canh, sợi khổ (của tấm vải)\n\n"
+		},
+		"meaning": "*  danh từ\n- (nghành dệt) sợi canh, sợi khổ (của tấm vải)\n\n"
+	},
+	{
+		"wordOrPhrase": "abbacy",
+		"pronounce": "/\u0027æbəsi/",
+		"typeOfWord": {
+			"danh từ": "- chức vị trưởng tu viện; quyền hạn trưởng tu viện\n\n"
+		},
+		"meaning": "*  danh từ\n- chức vị trưởng tu viện; quyền hạn trưởng tu viện\n\n"
+	},
+	{
+		"wordOrPhrase": "abbatial",
+		"pronounce": "/ə\u0027beiʃəl/",
+		"typeOfWord": {
+			"tính từ": "- (thuộc) trưởng tu viện\n\n"
+		},
+		"meaning": "*  tính từ\n- (thuộc) trưởng tu viện\n\n"
+	},
+	{
+		"wordOrPhrase": "abbess",
+		"pronounce": "/\u0027æbis/",
+		"typeOfWord": {
+			"danh từ": "- bà trưởng tu viện\n\n"
+		},
+		"meaning": "*  danh từ\n- bà trưởng tu viện\n\n"
+	},
+	{
+		"wordOrPhrase": "abbey",
+		"pronounce": "/\u0027æbi/",
+		"typeOfWord": {
+			"danh từ": "- tu viện\n- giới tu sĩ, các nhà tu, các bà xơ nhà thờ (lớn)\n\n"
+		},
+		"meaning": "*  danh từ\n- tu viện\n- giới tu sĩ, các nhà tu, các bà xơ nhà thờ (lớn)\n\n"
+	},
+	{
+		"wordOrPhrase": "abbot",
+		"pronounce": "/\u0027æbət/",
+		"typeOfWord": {
+			"danh từ": "- cha trưởng tu viện\n\n"
+		},
+		"meaning": "*  danh từ\n- cha trưởng tu viện\n\n"
+	},
+	{
+		"wordOrPhrase": "abbreviate",
+		"pronounce": "/ə\u0027bri:vieit/",
+		"typeOfWord": {
+			"tính từ": "- tương đối ngắn\n\n",
+			"ngoại động từ": "- tóm tắt, viết tắt; rút ngắn lại (cuộc đi thăm...)\n- (toán học) ước lược, rút gọn\n"
+		},
+		"meaning": "*  ngoại động từ\n- tóm tắt, viết tắt; rút ngắn lại (cuộc đi thăm...)\n- (toán học) ước lược, rút gọn\n*  tính từ\n- tương đối ngắn\n\n"
+	},
+	{
+		"wordOrPhrase": "abbreviated",
+		"pronounce": "/ə\u0027bri:vietid/",
+		"typeOfWord": {
+			"tính từ": "- tóm tắt; viết tắt; rút ngắn lại\n- ngắn cũn cỡn (quần áo...)\n\n"
+		},
+		"meaning": "*  tính từ\n- tóm tắt; viết tắt; rút ngắn lại\n- ngắn cũn cỡn (quần áo...)\n\n"
+	},
+	{
+		"wordOrPhrase": "abbreviation",
+		"pronounce": "/ə,bri:vi\u0027eiʃn/",
+		"typeOfWord": {
+			"danh từ": "- sự tóm tắt, sự rút ngắn (cuộc đi thăm...)\n- bài tóm tắt\n- chữ viết tắt\n\u003dJan is the abbreviation January+ Jan là chữ viết tắt của January\n- (toán học) sự ước lược, sự rút gọn\n\n"
+		},
+		"meaning": "*  danh từ\n- sự tóm tắt, sự rút ngắn (cuộc đi thăm...)\n- bài tóm tắt\n- chữ viết tắt\n\u003dJan is the abbreviation January+ Jan là chữ viết tắt của January\n- (toán học) sự ước lược, sự rút gọn\n\n"
+	},
+	{
+		"wordOrPhrase": "abbreviator",
+		"pronounce": "/ə\u0027bri:vieitə/",
+		"typeOfWord": {
+			"danh từ": "- người tóm tắt\n\n"
+		},
+		"meaning": "*  danh từ\n- người tóm tắt\n\n"
+	},
+	{
+		"wordOrPhrase": "abdicant",
+		"pronounce": "/\u0027æbdikeitə/ (abdicant) /\u0027æbdikənt/",
+		"typeOfWord": {
+			"danh từ": "- người từ bỏ\n- người thoái vị\n\n"
+		},
+		"meaning": "*  danh từ\n- người từ bỏ\n- người thoái vị\n\n"
+	},
+	{
+		"wordOrPhrase": "abdicate",
+		"pronounce": "/\u0027æbdikeit/",
+		"typeOfWord": {
+			"nội động từ": "- thoái vị, từ ngôi\n\n",
+			"ngoại động từ": "- từ bỏ (quyền lợi, địa vị...)\n\u003dto abdicate a position+ từ bỏ một địa vị\n\u003dto abdicate all one\u0027s rights+ từ bỏ mọi quyền lợi\n"
+		},
+		"meaning": "*  ngoại động từ\n- từ bỏ (quyền lợi, địa vị...)\n\u003dto abdicate a position+ từ bỏ một địa vị\n\u003dto abdicate all one\u0027s rights+ từ bỏ mọi quyền lợi\n*  nội động từ\n- thoái vị, từ ngôi\n\n"
+	},
+	{
+		"wordOrPhrase": "abdication",
+		"pronounce": "/,æbdi\u0027keiʃn/",
+		"typeOfWord": {
+			"danh từ": "- sự thoái vị, sự từ ngôi\n- sự từ bỏ (địa vị, chức vụ, quyền lợi...)\n\n"
+		},
+		"meaning": "*  danh từ\n- sự thoái vị, sự từ ngôi\n- sự từ bỏ (địa vị, chức vụ, quyền lợi...)\n\n"
+	},
+	{
+		"wordOrPhrase": "abdicator",
+		"pronounce": "/\u0027æbdikeitə/ (abdicant) /\u0027æbdikənt/",
+		"typeOfWord": {
+			"danh từ": "- người từ bỏ\n- người thoái vị\n\n"
+		},
+		"meaning": "*  danh từ\n- người từ bỏ\n- người thoái vị\n\n"
+	},
+	{
+		"wordOrPhrase": "abdomen",
+		"pronounce": "/\u0027æbdəmen/",
+		"typeOfWord": {
+			"danh từ": "- bụng\n\n"
+		},
+		"meaning": "*  danh từ\n- bụng\n\n"
+	},
+	{
+		"wordOrPhrase": "abdominal",
+		"pronounce": "/æb\u0027dɔminl/",
+		"typeOfWord": {
+			"tính từ": "- (thuộc) bụng; ở bụng\n\u003dan abdominal operation+ phẫu thuật ở bụng\n\u003dabdominal cavity+ khoang bụng\n\n"
+		},
+		"meaning": "*  tính từ\n- (thuộc) bụng; ở bụng\n\u003dan abdominal operation+ phẫu thuật ở bụng\n\u003dabdominal cavity+ khoang bụng\n\n"
+	},
+	{
+		"wordOrPhrase": "abdominous",
+		"pronounce": "/æb\u0027dɔminəs/",
+		"typeOfWord": {
+			"tính từ": "- phệ bụng\n\n"
+		},
+		"meaning": "*  tính từ\n- phệ bụng\n\n"
+	},
+	{
+		"wordOrPhrase": "abducent",
+		"pronounce": "/æb\u0027dju:sənt/",
+		"typeOfWord": {
+			"tính từ": "- (giải phẫu) rẽ ra, giạng ra\n\n"
+		},
+		"meaning": "*  tính từ\n- (giải phẫu) rẽ ra, giạng ra\n\n"
+	},
+	{
+		"wordOrPhrase": "abduct",
+		"pronounce": "/æd\u0027dʌkt/",
+		"typeOfWord": {
+			"ngoại động từ": "- bắt cóc, cuỗm đi, lừa đem đi (người đàn bà...)\n- (giải phẫu) rẽ ra, giạng ra\n\n"
+		},
+		"meaning": "*  ngoại động từ\n- bắt cóc, cuỗm đi, lừa đem đi (người đàn bà...)\n- (giải phẫu) rẽ ra, giạng ra\n\n"
+	},
+	{
+		"wordOrPhrase": "abduction",
+		"pronounce": "/æb\u0027dʌkʃn/",
+		"typeOfWord": {
+			"danh từ": "- sự bắt cóc (trẻ em...), sự bắt đi, sự cuỗm đi, sự lừa đem đi\n- (giải phẫu) sự giạng ra\n\n"
+		},
+		"meaning": "*  danh từ\n- sự bắt cóc (trẻ em...), sự bắt đi, sự cuỗm đi, sự lừa đem đi\n- (giải phẫu) sự giạng ra\n\n"
+	},
+	{
+		"wordOrPhrase": "abductor",
+		"pronounce": "/æb\u0027dʌktə/",
+		"typeOfWord": {
+			"danh từ": "- người bắt cóc, người cuỗm đi, người lừa đem đi\n- (giải phẫu) cơ giạng ((cũng) abductor muscle)\n\n"
+		},
+		"meaning": "*  danh từ\n- người bắt cóc, người cuỗm đi, người lừa đem đi\n- (giải phẫu) cơ giạng ((cũng) abductor muscle)\n\n"
+	},
+	{
+		"wordOrPhrase": "abeam",
+		"pronounce": "/ə\u0027bi:m/",
+		"typeOfWord": {
+			"phó từ": "- (hàng hải),  (hàng không) đâm ngang sườn\n\u003dabeam of us+ ngang sườn chúng tôi; sóng ngang với chúng tôi\n\n"
+		},
+		"meaning": "*  phó từ\n- (hàng hải),  (hàng không) đâm ngang sườn\n\u003dabeam of us+ ngang sườn chúng tôi; sóng ngang với chúng tôi\n\n"
+	},
+	{
+		"wordOrPhrase": "abecedarian",
+		"pronounce": "/,eibi:si:\u0027deəriən/",
+		"typeOfWord": {
+			"danh từ": "- (từ Mỹ,nghĩa Mỹ) học sinh vỡ lòng\n\n",
+			"tính từ": "- sắp xếp theo thứ tự abc\n- sơ đẳng\n- dốt nát\n"
+		},
+		"meaning": "*  tính từ\n- sắp xếp theo thứ tự abc\n- sơ đẳng\n- dốt nát\n*  danh từ\n- (từ Mỹ,nghĩa Mỹ) học sinh vỡ lòng\n\n"
+	},
+	{
+		"wordOrPhrase": "abed",
+		"pronounce": "/ə\u0027bed/",
+		"typeOfWord": {
+			"phó từ": "- ở trên giường\n\u003dto lie abed+ nằm ở trên giường\n\n"
+		},
+		"meaning": "*  phó từ\n- ở trên giường\n\u003dto lie abed+ nằm ở trên giường\n\n"
+	},
+	{
+		"wordOrPhrase": "abele",
+		"pronounce": "/ə\u0027bi:l/",
+		"typeOfWord": {
+			"danh từ": "- (thực vật học) cây bạch dương\n\n"
+		},
+		"meaning": "*  danh từ\n- (thực vật học) cây bạch dương\n\n"
+	},
+	{
+		"wordOrPhrase": "abelmosk",
+		"pronounce": "/\u0027eibəlmɔsk/",
+		"typeOfWord": {
+			"danh từ": "- (thực vật học) cây vông vàng\n\n"
+		},
+		"meaning": "*  danh từ\n- (thực vật học) cây vông vàng\n\n"
+	},
+	{
+		"wordOrPhrase": "aberrance",
+		"pronounce": "/æ\u0027berəns/ (aberrancy) /æ\u0027berənsi/",
+		"typeOfWord": {
+			"danh từ": "- sự lầm lạc\n- (sinh vật học) sự khác thường\n\n"
+		},
+		"meaning": "*  danh từ\n- sự lầm lạc\n- (sinh vật học) sự khác thường\n\n"
+	},
+	{
+		"wordOrPhrase": "aberrancy",
+		"pronounce": "/æ\u0027berəns/ (aberrancy) /æ\u0027berənsi/",
+		"typeOfWord": {
+			"danh từ": "- sự lầm lạc\n- (sinh vật học) sự khác thường\n\n"
+		},
+		"meaning": "*  danh từ\n- sự lầm lạc\n- (sinh vật học) sự khác thường\n\n"
+	},
+	{
+		"wordOrPhrase": "aberrant",
+		"pronounce": "/æ\u0027berənt/",
+		"typeOfWord": {
+			"tính từ": "- lầm lạc\n- (sinh vật học) khác thường\n\n"
+		},
+		"meaning": "*  tính từ\n- lầm lạc\n- (sinh vật học) khác thường\n\n"
+	},
+	{
+		"wordOrPhrase": "aberration",
+		"pronounce": "/æ\u0027be\u0027reiʃn/",
+		"typeOfWord": {
+			"danh từ": "- sự lầm lạc; phút lầm lạc\n- sự kém trí khôn, sự loạn trí\n- sự khác thường\n- (vật lý) quang sai\n\u003dlateral aberration+ quang sai ngang\n- (thiên văn học) tính sai\n\u003dsecular aberration+ tính sai trường kỳ\n\u003dannual aberration+ tính sai hằng năm\n\n"
+		},
+		"meaning": "*  danh từ\n- sự lầm lạc; phút lầm lạc\n- sự kém trí khôn, sự loạn trí\n- sự khác thường\n- (vật lý) quang sai\n\u003dlateral aberration+ quang sai ngang\n- (thiên văn học) tính sai\n\u003dsecular aberration+ tính sai trường kỳ\n\u003dannual aberration+ tính sai hằng năm\n\n"
+	},
+	{
+		"wordOrPhrase": "abet",
+		"pronounce": "/ə\u0027bet/",
+		"typeOfWord": {
+			"ngoại động từ": "- xúi bẩy, xúi giục, khích\n- tiếp tay (ai làm bậy)\n\n"
+		},
+		"meaning": "*  ngoại động từ\n- xúi bẩy, xúi giục, khích\n- tiếp tay (ai làm bậy)\n\n"
+	},
+	{
+		"wordOrPhrase": "abetment",
+		"pronounce": "/ə\u0027betmənt/ (abettal) /ə\u0027betəl/",
+		"typeOfWord": {
+			"danh từ": "- sự xúi bẩy, sự xúi giục, sự khích\n- sự tiếp tay\n\n"
+		},
+		"meaning": "*  danh từ\n- sự xúi bẩy, sự xúi giục, sự khích\n- sự tiếp tay\n\n"
+	},
+	{
+		"wordOrPhrase": "abettal",
+		"pronounce": "/ə\u0027betmənt/ (abettal) /ə\u0027betəl/",
+		"typeOfWord": {
+			"danh từ": "- sự xúi bẩy, sự xúi giục, sự khích\n- sự tiếp tay\n\n"
+		},
+		"meaning": "*  danh từ\n- sự xúi bẩy, sự xúi giục, sự khích\n- sự tiếp tay\n\n"
+	},
+	{
+		"wordOrPhrase": "abette",
+		"pronounce": "/ə\u0027betə/ (abettor) /ə\u0027betə/",
+		"typeOfWord": {
+			"danh từ": "- kẻ xúi giục\n- kẻ tiếp tay\n\n"
+		},
+		"meaning": "*  danh từ\n- kẻ xúi giục\n- kẻ tiếp tay\n\n"
+	},
+	{
+		"wordOrPhrase": "abettor",
+		"pronounce": "/ə\u0027betə/ (abettor) /ə\u0027betə/",
+		"typeOfWord": {
+			"danh từ": "- kẻ xúi giục\n- kẻ tiếp tay\n\n"
+		},
+		"meaning": "*  danh từ\n- kẻ xúi giục\n- kẻ tiếp tay\n\n"
+	},
+	{
+		"wordOrPhrase": "abeyance",
+		"pronounce": "/ə\u0027beiəns/",
+		"typeOfWord": {
+			"danh từ": "- sự đọng lại\n\u003dwork in abeyance+ công việc còn đọng lại\n- sự đình chỉ, sự hoãn lại, sự tạm thời không áp dụng (đạo luật...)\n\u003dto be in abeyance; to fall into abeyance+ bị đình chỉ, bị hoãn lại, tạm thời không được áp dụng\n- (pháp lý) tình trạng tạm thời không có người nhận; tình trạng tạm thời vô chủ\n\u003dlands in abeyance+ đất vô thừa nhận, đất vô chủ\n- tình trạng trống, tình trạng khuyết (một chức vị)\n\n"
+		},
+		"meaning": "*  danh từ\n- sự đọng lại\n\u003dwork in abeyance+ công việc còn đọng lại\n- sự đình chỉ, sự hoãn lại, sự tạm thời không áp dụng (đạo luật...)\n\u003dto be in abeyance; to fall into abeyance+ bị đình chỉ, bị hoãn lại, tạm thời không được áp dụng\n- (pháp lý) tình trạng tạm thời không có người nhận; tình trạng tạm thời vô chủ\n\u003dlands in abeyance+ đất vô thừa nhận, đất vô chủ\n- tình trạng trống, tình trạng khuyết (một chức vị)\n\n"
+	},
+	{
+		"wordOrPhrase": "abeyant",
+		"pronounce": "/ə\u0027beiənt/",
+		"typeOfWord": {
+			"tính từ": "- tạm thời đình chỉ, tạm nghỉ hoạt động\n\n"
+		},
+		"meaning": "*  tính từ\n- tạm thời đình chỉ, tạm nghỉ hoạt động\n\n"
+	},
+	{
+		"wordOrPhrase": "abhor",
+		"pronounce": "/əb\u0027hɔ:/",
+		"typeOfWord": {
+			"ngoại động từ": "- ghê tởm; ghét cay ghét đắng\n\n"
+		},
+		"meaning": "*  ngoại động từ\n- ghê tởm; ghét cay ghét đắng\n\n"
+	},
+	{
+		"wordOrPhrase": "abhorrence",
+		"pronounce": "/əb\u0027hɔrəns/",
+		"typeOfWord": {
+			"danh từ": "- sự ghê tởm\n\u003dto have an abhorrence of+ sự ghét cay ghét đắng\n\u003dto hold in abhorrence of+ ghê tởm; ghét cay ghét đắng\n- điều ghê tởm; cái bị ghét cay ghét đắng\n\n"
+		},
+		"meaning": "*  danh từ\n- sự ghê tởm\n\u003dto have an abhorrence of+ sự ghét cay ghét đắng\n\u003dto hold in abhorrence of+ ghê tởm; ghét cay ghét đắng\n- điều ghê tởm; cái bị ghét cay ghét đắng\n\n"
+	},
+	{
+		"wordOrPhrase": "abhorrent",
+		"pronounce": "/əb\u0027hɔrənt/",
+		"typeOfWord": {
+			"tính từ": "- ghê tởm, đáng ghét\n\u003dto be abhorrent to someone+ ghê tởm đối với ai, bị ai ghê tởm, bị ai ghét cay ghét đắng\n- (+ from) trái với, mâu thuẫn với, không hợp với\n\u003dconduct abhorrent from principles+ tư cách mâu thuẫn với phép tắc\n- (từ cổ,nghĩa cổ) (+ of) ghê tởm, ghét cay ghét đắng\n\u003dto be abhorrent of something+ ghê tởm cái gì, ghét cay ghét đắng cái gì\n\n"
+		},
+		"meaning": "*  tính từ\n- ghê tởm, đáng ghét\n\u003dto be abhorrent to someone+ ghê tởm đối với ai, bị ai ghê tởm, bị ai ghét cay ghét đắng\n- (+ from) trái với, mâu thuẫn với, không hợp với\n\u003dconduct abhorrent from principles+ tư cách mâu thuẫn với phép tắc\n- (từ cổ,nghĩa cổ) (+ of) ghê tởm, ghét cay ghét đắng\n\u003dto be abhorrent of something+ ghê tởm cái gì, ghét cay ghét đắng cái gì\n\n"
+	},
+	{
+		"wordOrPhrase": "abidance",
+		"pronounce": "/ə\u0027baidəns/",
+		"typeOfWord": {
+			"danh từ": "- sự tôn trọng, sự tuân theo, sự thi hành đúng\n\u003dabidance by rules+ sự tôn trọng luật lệ, sự tuân theo luật lệ\n- (+ in) sự tồn tại; sự kéo dài\n\n"
+		},
+		"meaning": "*  danh từ\n- sự tôn trọng, sự tuân theo, sự thi hành đúng\n\u003dabidance by rules+ sự tôn trọng luật lệ, sự tuân theo luật lệ\n- (+ in) sự tồn tại; sự kéo dài\n\n"
+	},
+	{
+		"wordOrPhrase": "abide",
+		"pronounce": "/ə\u0027baid/",
+		"typeOfWord": {
+			"nội động từ (abode; abode,  abide)": "- tồn tại; kéo dài\n\u003dthis mistake will not abide for ever+ sai lầm này sẽ không thể kéo dài mãi được\n- (+ by) tôn trọng, giữ, tuân theo, chịu theo; trung thành với\n\u003dto abide by one\u0027s friend+ trung thành với bạn\n- (từ cổ,nghĩa cổ) ở, ngụ tại\n\u003dto abide with somebody+ ở với ai\n",
+			"ngoại động từ": "- chờ, chờ đợi\n\u003dto abide one\u0027s time+ chờ thời cơ\n- chịu đựng, chịu\n\u003dwe can\u0027t abide his fits of temper+ chúng tôi không thể chịu được những cơn nóng giận của hắn\n- chống đỡ được (cuộc tấn công)\n\n"
+		},
+		"meaning": "*  nội động từ (abode; abode,  abide)\n- tồn tại; kéo dài\n\u003dthis mistake will not abide for ever+ sai lầm này sẽ không thể kéo dài mãi được\n- (+ by) tôn trọng, giữ, tuân theo, chịu theo; trung thành với\n\u003dto abide by one\u0027s friend+ trung thành với bạn\n- (từ cổ,nghĩa cổ) ở, ngụ tại\n\u003dto abide with somebody+ ở với ai\n*  ngoại động từ\n- chờ, chờ đợi\n\u003dto abide one\u0027s time+ chờ thời cơ\n- chịu đựng, chịu\n\u003dwe can\u0027t abide his fits of temper+ chúng tôi không thể chịu được những cơn nóng giận của hắn\n- chống đỡ được (cuộc tấn công)\n\n"
+	},
+	{
+		"wordOrPhrase": "abiding",
+		"pronounce": "/ə\u0027baidiɳ/",
+		"typeOfWord": {
+			"tính từ": "- (văn học) không thay đổi, vĩnh cửu, tồn tại mãi mãi\n\n"
+		},
+		"meaning": "*  tính từ\n- (văn học) không thay đổi, vĩnh cửu, tồn tại mãi mãi\n\n"
+	},
+	{
+		"wordOrPhrase": "abietene",
+		"pronounce": "/\u0027æbiəti:n/",
+		"typeOfWord": {
+			"danh từ": "- (hoá học) Abietin\n\n"
+		},
+		"meaning": "*  danh từ\n- (hoá học) Abietin\n\n"
+	},
+	{
+		"wordOrPhrase": "abigail",
+		"pronounce": "/\u0027æbigeil/",
+		"typeOfWord": {
+			"danh từ": "- thị tỳ, nữ tỳ\n\n"
+		},
+		"meaning": "*  danh từ\n- thị tỳ, nữ tỳ\n\n"
+	},
+	{
+		"wordOrPhrase": "abilitate",
+		"pronounce": "/ə\u0027biliteit/",
+		"typeOfWord": 
+{"động từ":"- (từ hiếm,nghĩa hiếm) (như) habiliate\n\n"}
