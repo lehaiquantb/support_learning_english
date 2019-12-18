@@ -1,9 +1,10 @@
 package dao.impl;
 
+import java.io.FileNotFoundException;
 import java.util.List;
-
 import dao.IWordDAO;
 import mapper.WordMapper;
+import model.DataModel;
 import model.WordModel;
 
 /**
@@ -13,10 +14,31 @@ import model.WordModel;
  */
 public class WordDAO extends AbstractDAO<WordModel> implements IWordDAO {
 
+	private WordJsonDAO wordJsonDAO;
+	private DataModel dataModel;
+
+	public WordJsonDAO getWordJsonDAO() {
+		return wordJsonDAO;
+	}
+
+	public WordDAO(DataModel dataModel) {
+		this.dataModel = dataModel;
+	}
+
 	@Override
 	public List<WordModel> getAllWord() {
 		String sql = "SELECT * FROM word";
-		return query(sql, new WordMapper());
+		if (databaseIsExist) {
+			return query(sql, new WordMapper());
+		} else {
+			this.wordJsonDAO = new WordJsonDAO(this.dataModel);
+			try {
+				return wordJsonDAO.getAllWord();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 
 	@Override

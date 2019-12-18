@@ -27,6 +27,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import dao.impl.WordDAO;
+import dao.impl.WordJsonDAO;
 import model.DataModel;
 import model.WordModel;
 import util.Util1;
@@ -62,6 +63,7 @@ public class JDialogCRUD extends JDialog {
 	private DataModel dataModel;
 	private MainFrame mainFrame;
 	private int mode;
+	private WordJsonDAO wordJsonDAO;
 
 	/**
 	 * Launch the application.
@@ -80,7 +82,8 @@ public class JDialogCRUD extends JDialog {
 	 * Create the dialog.
 	 */
 	public JDialogCRUD(String mode, DataModel dataModel, MainFrame mainFrame) {
-		this.wordDAO = new WordDAO();
+		this.wordDAO = dataModel.getWordDAO();
+		this.wordJsonDAO = wordDAO.getWordJsonDAO();
 		this.dialogCRUD = this;
 		this.dataModel = dataModel;
 		this.mainFrame = mainFrame;
@@ -336,7 +339,7 @@ public class JDialogCRUD extends JDialog {
 					pathImage = fileChooser.getSelectedFile().getAbsolutePath();
 					panelImage.removeAll();
 					panelImage.add(new JLabel(Util1.getImageIconResizeByPath(getClass(),
-							fileChooser.getSelectedFile().getAbsolutePath(), null, 130, 109)));
+							fileChooser.getSelectedFile().getAbsolutePath(), null, null, 130, 109)));
 					panelImage.revalidate();
 					panelImage.repaint();
 				}
@@ -418,7 +421,7 @@ public class JDialogCRUD extends JDialog {
 
 		panelImage.removeAll();
 		panelImage.add(new JLabel(Util1.getImageIconResizeByPath(getClass(), wordModel.getPathOfImageFile(),
-				wordModel.getWordOrPhrase(), 130, 109)));
+				wordModel.getWordOrPhrase(), wordModel, 130, 109)));
 		panelImage.revalidate();
 		panelImage.repaint();
 	}
@@ -452,7 +455,11 @@ public class JDialogCRUD extends JDialog {
 			newWordModel.setPathOfAudioFile(this.textFieldPronuonce.getText());
 			newWordModel.setPathOfImageFile(this.pathImage);
 			newWordModel.setSuggest(this.textAreaSuggestion.getText());
-			wordDAO.saveWord(newWordModel);
+			if (wordDAO.databaseIsExist) {
+				wordDAO.saveWord(newWordModel);
+			} else {
+				wordJsonDAO.saveWord(newWordModel);
+			}
 		} else if (mode == 1) {
 			wordModel.setWordOrPhrase(this.textFieldWord.getText());
 			wordModel.setPronounce(this.textFieldSpelling.getText());
@@ -465,7 +472,11 @@ public class JDialogCRUD extends JDialog {
 			wordModel.setPathOfAudioFile(this.textFieldPronuonce.getText());
 			wordModel.setPathOfImageFile(this.pathImage);
 			wordModel.setSuggest(this.textAreaSuggestion.getText());
-			wordDAO.update(wordModel);
+			if (wordDAO.databaseIsExist) {
+				wordDAO.update(wordModel);
+			} else {
+				wordJsonDAO.editWord(wordModel, wordModel.getIndexOfListWords());
+			}
 		}
 
 		dataModel.update();
@@ -473,7 +484,11 @@ public class JDialogCRUD extends JDialog {
 	}
 
 	void removeWordFromDatabase() {
-		wordDAO.delete(wordModel.getId());
+		if (wordDAO.databaseIsExist) {
+			wordDAO.delete(wordModel.getId());
+		} else {
+			wordJsonDAO.deleteWord(wordModel.getIndexOfListWords());
+		}
 		dataModel.update();
 		mainFrame.update();
 	}

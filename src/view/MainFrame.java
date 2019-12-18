@@ -32,6 +32,7 @@ import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
 
 import java.awt.FlowLayout;
+import java.awt.Toolkit;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
@@ -88,7 +89,12 @@ public class MainFrame {
 	 */
 	private void initView() {
 		frame = new JFrame("Support Learning English");
-		frame.setBounds(500, 10, 875, 543);
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		frame.setSize(875, 543);
+		frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
+		//frame.pack();
+		//frame.setLocationRelativeTo(null);
+		// frame.setBounds(500, 10, 875, 543);
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setIconImage(Util1.getImageResize(getClass(), "iconHust.png", 13, 15));
@@ -112,13 +118,11 @@ public class MainFrame {
 		this.dialogRead = new JDialogCRUD("read", dataModel, this);
 		this.dialogDelete = new JDialogCRUD("delete", dataModel, this);
 		this.dialogEdit = new JDialogCRUD("", dataModel, this);
-		// frame.add(dialogCRUD);
 
 		JScrollPane scrollPane = new JScrollPane();
 
 		panelSearchResults = new JPanel();
 		panelSearchResults.setBounds(359, 58, 380, 255);
-		// frame.getLayeredPane().add(panelSearchResults);
 		// frame.getContentPane().add(panelSearchResults);
 		panelSearchResults.setLayout(new BorderLayout(0, 0));
 
@@ -130,10 +134,10 @@ public class MainFrame {
 		listSearchResults.setModel(defaultListModel);
 		scrollPane.setViewportView(listSearchResults);
 		panelSearchResults.add(scrollPane);
-/////////////////////////////////////////////////////////////////////////////
+
 		JScrollPane scrollPane1 = new JScrollPane();
 		panelSearchTag = new JPanel();
-		panelSearchTag.setBounds(10, 185, 153, 157);
+		panelSearchTag.setBounds(10, 175, 153, 157);
 		// frame.getLayeredPane().add(panelSearchTag);
 		// frame.getContentPane().add(panelSearchTag);
 		panelSearchTag.setLayout(new BorderLayout(0, 0));

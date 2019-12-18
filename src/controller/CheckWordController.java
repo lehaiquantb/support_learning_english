@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -7,6 +8,7 @@ import java.util.List;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -23,8 +25,6 @@ import view.MainFrame;
 public class CheckWordController extends AbstractController {
 
 	private JButton btnCheck;
-	private List<JTextFieldBox> listBoxs;
-	private WordModel currentWordModel;
 	private WordModel wordModel;
 
 	public CheckWordController(DataModel dataModel, MainFrame mainFrame) {
@@ -65,11 +65,15 @@ public class CheckWordController extends AbstractController {
 						contentView.getPanelValidateWrong().setVisible(false);
 						contentView.getPanelValidateRight().setVisible(false);
 						check = false;
+						break;
 					} else if (word.charAt(i) != listBoxs.get(i).getText().charAt(0)) {
+						listBoxs.get(i).setBorder(BorderFactory.createLineBorder(Color.RED));
 						contentView.getPanelValidateWarning().setVisible(false);
 						contentView.getPanelValidateWrong().setVisible(true);
 						contentView.getPanelValidateRight().setVisible(false);
 						check = false;
+					} else {
+						listBoxs.get(i).setBorder(BorderFactory.createEmptyBorder());
 					}
 				}
 				if (check) {

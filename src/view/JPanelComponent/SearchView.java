@@ -4,17 +4,12 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import util.Util1;
-
-import javax.swing.JList;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 /**
  * @author quan.lh173316
@@ -25,7 +20,6 @@ public class SearchView extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JComboBox<String> cB_ModeSearch;
 	private JTextField tF_Search;
-	private JButton btnSearch;
 	private JLabel lblTotalResult;
 
 	/**
@@ -39,7 +33,7 @@ public class SearchView extends JPanel {
 		cB_ModeSearch = new JComboBox<String>();
 		cB_ModeSearch.addItem("By Word Or Phrase");
 		cB_ModeSearch.addItem("By HashTag");
-		//cB_ModeSearch.addItem("By Date");
+		// cB_ModeSearch.addItem("By Date");
 		cB_ModeSearch.setSelectedIndex(0);
 		((JLabel) cB_ModeSearch.getRenderer()).setHorizontalAlignment(JLabel.CENTER);
 		this.add(cB_ModeSearch, BorderLayout.WEST);
@@ -62,9 +56,6 @@ public class SearchView extends JPanel {
 		lblTotalResult = new JLabel("0");
 		lblTotalResult.setBounds(41, 11, 79, 25);
 		panelTotalResults.add(lblTotalResult);
-
-//		btnSearch = new JButton("Search");
-//		this.add(btnSearch, BorderLayout.EAST);
 	}
 
 	public JLabel getLblTotalResult() {
@@ -89,14 +80,6 @@ public class SearchView extends JPanel {
 
 	public void settF_Search(JTextField tF_Search) {
 		this.tF_Search = tF_Search;
-	}
-
-	public JButton getBtnSearch() {
-		return btnSearch;
-	}
-
-	public void setBtnSearch(JButton btnSearch) {
-		this.btnSearch = btnSearch;
 	}
 
 	public static long getSerialversionuid() {

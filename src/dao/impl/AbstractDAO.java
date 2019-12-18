@@ -17,8 +17,12 @@ import mapper.RowMapper;
 public class AbstractDAO<T> implements GenericDAO<T> {
 
 	ResourceBundle resourceBundle = ResourceBundle.getBundle("resources.db");
+	public boolean databaseIsExist;
+	private Connection connection;
 
 	public AbstractDAO() {
+		this.databaseIsExist = true;
+		this.connection = this.getConnection();
 	}
 
 	public Connection getConnection() {
@@ -29,7 +33,8 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			String password = resourceBundle.getString("password");
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
-			System.out.println("Can't connect to Database");
+			this.databaseIsExist = false;
+			System.out.println("Can't connect to Database -> use JsonFile as Database...");
 			return null;
 		}
 	}
@@ -56,16 +61,15 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		}
 	}
 
+	@SuppressWarnings("hiding")
 	@Override
 	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
-		// TODO Auto-generated method stub
 		List<T> results = null;
-		Connection connection = null;
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {
 			results = new ArrayList<>();
-			connection = getConnection();
+			this.connection = getConnection();
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();
@@ -94,8 +98,6 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 
 	@Override
 	public void update(String sql, Object... parameters) {
-		// TODO Auto-generated method stub
-		Connection connection = null;
 		PreparedStatement statement = null;
 		try {
 			connection = getConnection();
@@ -128,8 +130,6 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 
 	@Override
 	public Long insert(String sql, Object... parameters) {
-		// TODO Auto-generated method stub
-		Connection connection = null;
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {

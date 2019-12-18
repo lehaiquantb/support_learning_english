@@ -26,12 +26,8 @@ import view.JPanelComponent.SearchView;
  */
 public class SearchController extends AbstractController {
 
-	private JButton btnSearch;
-
 	public SearchController(DataModel dataModel, MainFrame mainFrame) {
 		super(dataModel, mainFrame);
-		this.btnSearch = searchView.getBtnSearch();
-
 	}
 
 	public void addSearchListener() {
@@ -64,27 +60,26 @@ public class SearchController extends AbstractController {
 				mainFrame.getFrame().getLayeredPane().repaint();
 			}
 		});
-
 	}
 
 	boolean setListModel(String text) {
 		int totalResults = 0;
 		boolean check = false;
 		DefaultListModel<String> newListModel = new DefaultListModel<String>();
-		Pattern pattern = Pattern.compile("[^@]*" + text + "[^@]*");
+		// Pattern pattern = Pattern.compile("[^@]*" + text + "[^@]*");//word
+		Pattern pattern = Pattern.compile("@(" + text + "[^@]*)");// word
 		Matcher matcher = pattern.matcher(dataModel.getMatchWord());
 		if (searchView.getcB_ModeSearch().getSelectedIndex() == 1) {
-			pattern = Pattern.compile("[\\S]*" + text + "[\\S]*");
+			pattern = Pattern.compile("([\\S]*" + text + "[\\S]*)");// tag
 			matcher = pattern.matcher(dataModel.getMatchTag());
-			
 		}
 		if (matcher.find()) {
 			totalResults++;
-			newListModel.addElement(matcher.group());
+			newListModel.addElement(matcher.group(1));
 			check = true;
 			while (matcher.find()) {
 				totalResults++;
-				newListModel.addElement(matcher.group());
+				newListModel.addElement(matcher.group(1));
 			}
 		}
 

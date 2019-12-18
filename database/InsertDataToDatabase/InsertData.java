@@ -21,6 +21,7 @@ public class InsertData {
 		filter.run();
 		filter.filter();
 		filter.setTagAndPathFile("", "", "#tag");
+
 //		int size = filter.listWords.size();
 //		System.out.println(size);
 //		System.out.println(filter.listWords.get(0).getPathOfAudioFile());
@@ -45,7 +46,8 @@ public class InsertData {
 				String pronounce = temp.get(i).getPronounce();
 				String meaning = temp.get(i).getMeaning();
 				String suggest = "Độ dài của từ(cụm từ): " + wordOrPhrase.length();
-				String pathImg = "D:\\Study\\20191\\OOP\\data\\ImageData\\" + wordOrPhrase;
+				String pathImg = temp.get(i).getPathOfImageFile();
+				// String pathImg = "D:\\Study\\20191\\OOP\\data\\ImageData\\" + wordOrPhrase;
 				String pathAudio = "D:\\Study\\20191\\OOP\\data\\pronounce_wav\\" + wordOrPhrase + ".wav";
 				String tags = "#tag #length" + wordOrPhrase.length();
 
@@ -96,9 +98,9 @@ public class InsertData {
 //		System.out.println(date);
 	}
 
-//	public static void main(String[] args) throws FileNotFoundException {
-//		InsertData insertData = new InsertData();
-//		insertData.run();
-//	}
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+		InsertData insertData = new InsertData();
+		//insertData.run();
+	}
 
 }

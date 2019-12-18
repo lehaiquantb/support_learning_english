@@ -16,6 +16,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.lang.model.type.NullType;
+
 import model.WordModel;
 import util.UrlImage;
 
@@ -34,7 +36,7 @@ public class FilterDataFromDictFile {
 
 	public void run() throws FileNotFoundException {
 		Scanner sc = null;
-		File file = new File("D:\\Study\\20191\\OOP\\data\\EV_109k\\anhviet109K.dict");
+		File file = new File("./EV_109k/anhviet109K.dict");
 		list = new ArrayList<String>();
 		String q;
 		try {
@@ -79,7 +81,7 @@ public class FilterDataFromDictFile {
 		// PrintWriter writer = new PrintWriter("url-image.txt", "UTF-8");
 		long startTime = System.nanoTime();
 		BufferedWriter output = new BufferedWriter(new FileWriter("url-image.txt", true));
-		for (int i = 53000; i < 54000; i++) {
+		for (int i = 83000; i < 84000; i++) {
 			Matcher m1 = Pattern.compile("^@([^\\n\\/]+(?=[ |\\n]))").matcher(list.get(i));
 			Matcher m0 = Pattern.compile("^@[^\\n']+[(?= \\n)]").matcher(list.get(i));
 			String url;
@@ -99,14 +101,21 @@ public class FilterDataFromDictFile {
 		}
 		// writer.close();
 		output.close();
-		System.out.println("Total time to excute 1000 words in millis= " + (System.nanoTime() - startTime) / 1000000);
+		System.out.println("Total time to excute 1000 words in millis = " + (System.nanoTime() - startTime) / 1000000);
 		// Total time to excute 1000 words in millis = 820798
 		// millis,778080,791245,778952,798424,827834,803733,823075,801493,804622,840809,853679,830052,855652,832950,847551,801021,791164,813049,817175
-		// 888517,876462,854863,838200,855629,826708,835792,832896,1602703,821430
+		// 888517,876462,854863,838200,855629,826708,835792,832896,1602703,821430,813124,802543,841998
+		// 835348,817388,886360,
+		// 856320,840214,818104,1717938,1090847,831393,820676,826521,
+		// 816487,819858,831896
+		// 822612, 826125, 1397054,
+		// 821635,848484,804189,851695,860192,843127,838552,1097158,931995
 	}
 
 	public void filter() throws FileNotFoundException, UnsupportedEncodingException {
-
+		UrlImageFromGgSearch urlImages = new UrlImageFromGgSearch();
+		HashMap<String, String> wordMapUrl = urlImages.getWordMapUrl();
+		HashMap<String, NullType> hashMap1 = new HashMap<String, NullType>();
 		// int i = 0;
 		for (String str : list) {
 			// i++;
@@ -125,6 +134,13 @@ public class FilterDataFromDictFile {
 				word.setWordOrPhrase(m0.group());
 			} else {
 				continue;
+			}
+
+			hashMap1.put(word.getWordOrPhrase(), null);
+
+			// set url image
+			if (wordMapUrl.containsKey(word.getWordOrPhrase())) {
+				word.setPathOfImageFile(wordMapUrl.get(word.getWordOrPhrase()));
 			}
 
 			if (m2.find()) {
@@ -147,18 +163,19 @@ public class FilterDataFromDictFile {
 					word.setMeaning(m4.group(2).substring(0, 3900));
 				}
 			}
-
 			listWords.add(word);
 //			if (i == 20) {
 //				break;
 //			}
 		}
+		System.out.println("The number of words overlaps = " + (listWords.size() - hashMap1.size()));
 	}
 
 	public void setTagAndPathFile(String imageName, String audioName, String TagDefault) {
 		for (WordModel word : listWords) {
 			word.setHashTags(TagDefault);
-			word.setPathOfImageFile("D:\\Study\\20191\\OOP\\data\\ImageData\\" + word.getWordOrPhrase());
+			// word.setPathOfImageFile("D:\\Study\\20191\\OOP\\data\\ImageData\\" +
+			// word.getWordOrPhrase());
 			word.setPathOfAudioFile("D:\\Study\\20191\\OOP\\data\\pronounce_flac\\" + word.getWordOrPhrase() + ".flac");
 		}
 	}

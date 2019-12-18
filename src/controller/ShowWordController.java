@@ -17,12 +17,10 @@ import view.JPanelComponent.ContentView;
  */
 public class ShowWordController extends AbstractController {
 
-	private JFrame frame;
 	private JButton btnShow;
 
 	public ShowWordController(DataModel dataModel, MainFrame mainFrame, JFrame frame) {
 		super(dataModel, mainFrame);
-		this.frame = frame;
 		this.btnShow = contentView.getBtnShowWord();
 		this.run();
 	}
@@ -36,15 +34,15 @@ public class ShowWordController extends AbstractController {
 				for (int i = 0; i < length; i++) {
 					dataModel.getListBoxs().get(i).setText(Character.toString(wordOrPhrase.charAt(i)));
 				}
-				//JOptionPane.showMessageDialog(null, dataModel.getCurrentWordModel().getWordOrPhrase());
+				// JOptionPane.showMessageDialog(null,
+				// dataModel.getCurrentWordModel().getWordOrPhrase());
 
 //				contentView.getPanel_Suggest().removeAll();
 //				contentView.getPanel_Suggest().revalidate();
 //				contentView.getPanel_Suggest().repaint();
 //
 //				JOptionPane.showMessageDialog(null, contentView.getTextAreaSuggest().getText());
-				
-				
+
 				// dataModel.getListBoxs().get(1).setText("u");
 //				contentView.getLblDate().setVisible(false);
 //				contentView.getLblDate().setText("a");

@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.google.gson.Gson;
+
 /**
  * @author quan.lh173316
  *
@@ -11,6 +13,7 @@ import java.util.HashMap;
 public class WordModel implements Comparable<WordModel> {
 
 	private Long id;
+	private int indexOfListWord;
 	private String wordOrPhrase;
 	private String pronounce;
 	private HashMap<String, String> typeOfWord;
@@ -21,6 +24,27 @@ public class WordModel implements Comparable<WordModel> {
 	private Timestamp dateAdded;
 	private ArrayList<String> listTag;
 	private String hashTags;
+
+	public WordModel() {
+
+	}
+
+	public WordModel(Long id, int indexOfListWord, String wordOrPhrase, String pronounce,
+			HashMap<String, String> typeOfWord, String meaning, String suggest, String pathOfImageFile,
+			String pathOfAudioFile, Timestamp dateAdded, ArrayList<String> listTag, String hashTags) {
+		this.id = id;
+		this.indexOfListWord = indexOfListWord;
+		this.wordOrPhrase = wordOrPhrase;
+		this.pronounce = pronounce;
+		this.typeOfWord = typeOfWord;
+		this.meaning = meaning;
+		this.suggest = suggest;
+		this.pathOfAudioFile = pathOfAudioFile;
+		this.pathOfImageFile = pathOfImageFile;
+		this.dateAdded = dateAdded;
+		this.listTag = listTag;
+		this.hashTags = hashTags;
+	}
 
 	/**
 	 * @return the wordOrPhrase
@@ -177,11 +201,25 @@ public class WordModel implements Comparable<WordModel> {
 	}
 
 	@Override
+	public String toString() {
+		Gson gson = new Gson();
+		return gson.toJson(this);
+	}
+
+	@Override
 	public int compareTo(WordModel o) {
 		if (this.getDateAdded().compareTo(o.getDateAdded()) == 0) {
 			return 1;
 		} else
 			return this.getDateAdded().compareTo(o.getDateAdded());
+	}
+
+	public int getIndexOfListWords() {
+		return indexOfListWord;
+	}
+
+	public void setIndexOfListWords(int indexOfListWords) {
+		this.indexOfListWord = indexOfListWords;
 	}
 
 }

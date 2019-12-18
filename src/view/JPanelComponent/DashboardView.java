@@ -1,47 +1,30 @@
 package view.JPanelComponent;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Properties;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-
-import util.Util1;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Properties;
-
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.ImageIcon;
-import java.awt.SystemColor;
-import javax.swing.JInternalFrame;
-import org.jdatepicker.DateModel;
-import javax.swing.JFormattedTextField.AbstractFormatter;
-import org.jdatepicker.util.JDatePickerUtil;
-import java.awt.Panel;
+import util.Util1;
 
 /**
  * @author quan.lh173316

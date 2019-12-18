@@ -187,17 +187,17 @@ public class ContentView extends JPanel {
 		panel_mode1.add(panel_WordOrPhrase);
 		panel_WordOrPhrase.setLayout(new FlowLayout(FlowLayout.LEFT, 1, 5));
 
-		
 //		JTextField jTextField = new JTextField();
+//		jTextField.setBorder(BorderFactory.createLineBorder(Color.RED));
 //		jTextField.setDocument(new JTextFieldLimit(1));
 //		jTextField.setText(Character.toString('a'));
 //		jTextField.setEditable(false);
 //		jTextField.setHorizontalAlignment(JTextField.CENTER);
 //		jTextField.setFont(new Font("Tahoma", Font.BOLD, 14));
 //		jTextField.setColumns(1);
-//		
+
 //		panel_WordOrPhrase.add(jTextField);
-		
+
 		btnShowWord = new JButton("Show");
 		btnShowWord.setBounds(94, 154, 69, 23);
 		panel_mode1.add(btnShowWord);

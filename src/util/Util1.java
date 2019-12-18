@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -21,6 +22,8 @@ import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+
+import model.WordModel;
 
 public class Util1 {
 
@@ -51,32 +54,42 @@ public class Util1 {
 		return null;
 	}
 
-	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, String keyWord, int width,
-			int height) {
+	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, String keyWord,
+			WordModel wordModel, int width, int height) {
 		try {
-			if (pathFile == null) {
-				return getImageIconResize(kClass, "NoImageAvailable.jpg", width, height);
-			}
-			File file = new File(pathFile);
-			if (file.exists()) {
-				BufferedImage myPicture = ImageIO.read(file);
-				Image newImg = myPicture.getScaledInstance(width, height, Image.SCALE_DEFAULT);
-				return new ImageIcon(newImg);
-			}
-			if (keyWord != null) {
-				String url = UrlImage.getUrlImage(keyWord);
-				if (url != null) {
-					URL img = new URL(url);
-					ImageIcon imageIcon = new ImageIcon(img);
-					Image image = imageIcon.getImage();
-					image = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
-					return new ImageIcon(image);
+			if (pathFile != null) {
+				File file = new File(pathFile);
+				if (file.exists()) {
+					BufferedImage myPicture = ImageIO.read(file);
+					Image newImg = myPicture.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+					return new ImageIcon(newImg);
 				}
-			} else {
-				return getImageIconResize(kClass, "NoImageAvailable.jpg", width, height);
+			}
+			try {
+				URL img = new URL(pathFile);
+				ImageIcon imageIcon = new ImageIcon(img);
+				Image image = imageIcon.getImage();
+				image = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+				return new ImageIcon(image);
+			} catch (MalformedURLException exception) {
+				if (keyWord != null) {
+					String url = UrlImage.getUrlImage(keyWord);
+					if (url != null) {
+						URL img = new URL(url);
+						ImageIcon imageIcon = new ImageIcon(img);
+						Image image = imageIcon.getImage();
+						image = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+						wordModel.setPathOfImageFile(url);
+						return new ImageIcon(image);
+					} else {
+						return getImageIconResize(kClass, "NoImageAvailable.jpg", width, height);
+					}
+				} else {
+					return getImageIconResize(kClass, "NoImageAvailable.jpg", width, height);
+				}
 			}
 		} catch (Exception ex) {
-			System.out.println(ex);
+			ex.printStackTrace();
 		}
 		return null;
 	}

@@ -180,9 +180,15 @@ public class DataModel {
 	 * get data from database and set for listAllWordModels
 	 */
 	public void setListAllWordModels() throws SQLException {
-		this.wordDAO = new WordDAO();
+		this.wordDAO = new WordDAO(this);
 		listAllWordModels = new ArrayList<WordModel>();
 		listAllWordModels = wordDAO.getAllWord();
+		int size = listAllWordModels.size();
+		if (!wordDAO.databaseIsExist) {
+			for (int i = 0; i < size; i++) {
+				listAllWordModels.get(i).setIndexOfListWords(i);
+			}
+		}
 		this.setTotalWordModel(listAllWordModels.size());
 	}
 
@@ -289,17 +295,26 @@ public class DataModel {
 	}
 
 	public void update() {
-		this.listAllWordModels = wordDAO.getAllWord();
+		if (wordDAO.databaseIsExist) {
+			this.listAllWordModels = wordDAO.getAllWord();
+		}
 		this.setSortedSetWordModels();
 		this.setTotalWordModel(listAllWordModels.size());
 		HashMap<String, WordModel> newWordMapWordModel = new HashMap<String, WordModel>();
+		int i = 0;
 		for (WordModel wordModel : listAllWordModels) {
+			wordModel.setIndexOfListWords(i);
+			i++;
 			newWordMapWordModel.put(wordModel.getWordOrPhrase(), wordModel);
 		}
 		this.wordMapWordModel = newWordMapWordModel;
 		this.setMatchWord();
 		this.setTagMapListWordModel();
 		this.setListWordModelsByDefault();
+	}
+
+	public void updateJsonFile() {
+
 	}
 
 	/**
@@ -339,6 +354,10 @@ public class DataModel {
 
 	public int getTotalWordModelByMode() {
 		return totalWordModelByMode;
+	}
+
+	public WordDAO getWordDAO() {
+		return wordDAO;
 	}
 
 }
