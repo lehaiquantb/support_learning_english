@@ -1,10 +1,12 @@
 package dao.impl;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,13 +36,16 @@ public class WordJsonDAO {
 		this.gson = builder.create();
 	}
 
-	public List<WordModel> getAllWord() throws FileNotFoundException {
-		String path = "./JSONfile-as-database/listWordModels.json";
-		FileInputStream fis = new FileInputStream(path);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
+	public List<WordModel> getAllWord() throws FileNotFoundException, UnsupportedEncodingException {
 		ArrayList<WordModel> list;
+		File fileDir = new File("./JSONfile-as-database/listWordModels.json");
+		BufferedReader reader;
+		reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileDir), "UTF-8"));
 		list = gson.fromJson(reader, new TypeToken<ArrayList<WordModel>>() {
 		}.getType());
+//		String path = "./JSONfile-as-database/listWordModels.json";
+//		FileInputStream fis = new FileInputStream(path);
+//		BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
 		return list;
 	}
 
@@ -62,8 +67,9 @@ public class WordJsonDAO {
 	/**
 	 * @param args
 	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException 
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
 		WordJsonDAO wordJsonDAO = new WordJsonDAO(null);
 		List<WordModel> wordModels = wordJsonDAO.getAllWord();
 		System.out.println(wordModels.get(0));

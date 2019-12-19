@@ -1,6 +1,8 @@
 package model;
 
 import util.JTextFieldBox;
+
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -178,8 +180,10 @@ public class DataModel {
 
 	/**
 	 * get data from database and set for listAllWordModels
+	 * 
+	 * @throws UnsupportedEncodingException
 	 */
-	public void setListAllWordModels() throws SQLException {
+	public void setListAllWordModels() throws SQLException, UnsupportedEncodingException {
 		this.wordDAO = new WordDAO(this);
 		listAllWordModels = new ArrayList<WordModel>();
 		listAllWordModels = wordDAO.getAllWord();
@@ -284,7 +288,7 @@ public class DataModel {
 		return this.listAllWordModels;
 	}
 
-	public DataModel() throws SQLException {
+	public DataModel() throws SQLException, UnsupportedEncodingException {
 		setListAllWordModels();
 		setSortedSetWordModels();
 		setWordMapWordModel();
@@ -294,7 +298,7 @@ public class DataModel {
 		setListWordModelsByDefault();
 	}
 
-	public void update() {
+	public void update() throws UnsupportedEncodingException {
 		if (wordDAO.databaseIsExist) {
 			this.listAllWordModels = wordDAO.getAllWord();
 		}

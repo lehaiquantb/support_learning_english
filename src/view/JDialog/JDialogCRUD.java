@@ -7,6 +7,7 @@ import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -354,7 +355,11 @@ public class JDialogCRUD extends JDialog {
 						"Are you sure want to delete " + "\"" + wordModel.getWordOrPhrase() + "\"", "Confirm",
 						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 				if (result == JOptionPane.YES_OPTION) {
-					removeWordFromDatabase();
+					try {
+						removeWordFromDatabase();
+					} catch (UnsupportedEncodingException e1) {
+						e1.printStackTrace();
+					}
 					dialogCRUD.setVisible(false);
 				}
 			}
@@ -370,7 +375,11 @@ public class JDialogCRUD extends JDialog {
 							"Are you sure want to save " + "\"" + textFieldWord.getText() + "\"", "Confirm",
 							JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 					if (result == JOptionPane.YES_OPTION) {
-						updateWordToDatabase();
+						try {
+							updateWordToDatabase();
+						} catch (UnsupportedEncodingException e1) {
+							e1.printStackTrace();
+						}
 						dialogCRUD.setVisible(false);
 					}
 				}
@@ -444,7 +453,7 @@ public class JDialogCRUD extends JDialog {
 		lblDate.setText("Today");
 	}
 
-	void updateWordToDatabase() {
+	void updateWordToDatabase() throws UnsupportedEncodingException {
 		if (mode == 0) {
 			WordModel newWordModel = new WordModel();
 			newWordModel.setWordOrPhrase(this.textFieldWord.getText());
@@ -486,7 +495,7 @@ public class JDialogCRUD extends JDialog {
 		mainFrame.update();
 	}
 
-	void removeWordFromDatabase() {
+	void removeWordFromDatabase() throws UnsupportedEncodingException {
 		if (wordDAO.databaseIsExist) {
 			wordDAO.delete(wordModel.getId());
 		} else {

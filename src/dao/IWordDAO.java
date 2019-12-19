@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import model.WordModel;
@@ -9,7 +10,7 @@ import model.WordModel;
  *
  */
 public interface IWordDAO extends GenericDAO<WordModel> {
-	List<WordModel> getAllWord();
+	List<WordModel> getAllWord() throws UnsupportedEncodingException;
 	Long saveWord(WordModel wordModel);
 	void update(WordModel wordModel);
 	void delete(Long id);

@@ -1,8 +1,14 @@
 package main;
 
 import java.awt.EventQueue;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -28,8 +34,9 @@ public class Main {
 	/**
 	 * @param args
 	 * @throws SQLException
+	 * @throws UnsupportedEncodingException
 	 */
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, UnsupportedEncodingException {
 		DataModel dataModel = new DataModel();
 
 		EventQueue.invokeLater(new Runnable() {
@@ -54,7 +61,10 @@ public class Main {
 					builder.setPrettyPrinting();
 					Gson gson = builder.create();
 					try {
-						FileWriter writer = new FileWriter("./JSONfile-as-database/listWordModels.json");
+						Path logFile = Paths.get("./JSONfile-as-database/listWordModels.json");
+						BufferedWriter writer = Files.newBufferedWriter(logFile, StandardCharsets.UTF_8);
+						// FileWriter writer = new
+						// FileWriter("./JSONfile-as-database/listWordModels.json");
 						writer.write(
 								gson.toJson(dataModel.getListAllWordModels(), new TypeToken<ArrayList<WordModel>>() {
 								}.getType()));

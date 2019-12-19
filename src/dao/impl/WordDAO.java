@@ -1,6 +1,7 @@
 package dao.impl;
 
 import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import dao.IWordDAO;
 import mapper.WordMapper;
@@ -26,7 +27,7 @@ public class WordDAO extends AbstractDAO<WordModel> implements IWordDAO {
 	}
 
 	@Override
-	public List<WordModel> getAllWord() {
+	public List<WordModel> getAllWord() throws UnsupportedEncodingException {
 		String sql = "SELECT * FROM word";
 		if (databaseIsExist) {
 			return query(sql, new WordMapper());
