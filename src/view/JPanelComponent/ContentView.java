@@ -84,8 +84,14 @@ public class ContentView extends JPanel {
 		panel_mode1.setLayout(null);
 
 		panel_Image = new JPanel();
+//		FlowLayout fl_panel_Image = new FlowLayout(FlowLayout.CENTER);
+//		fl_panel_Image.setVgap(1);
+//		fl_panel_Image.setHgap(1);
+//		panel_Image.setLayout(fl_panel_Image);
+		
 		panel_Image.setBounds(407, 11, 200, 179);
 		panel_mode1.add(panel_Image);
+		panel_Image.setLayout(new BorderLayout(0, 0));
 
 		panel_Sound = new JPanel();
 		panel_Sound.setBounds(10, 11, 387, 33);
@@ -237,7 +243,7 @@ public class ContentView extends JPanel {
 		lblIconRight.setBounds(10, 0, 19, 23);
 		panelValidateRight.add(lblIconRight);
 
-		JLabel lblMessageRight = new JLabel("Good!");
+		JLabel lblMessageRight = new JLabel("Good! Loading...");
 		lblMessageRight.setForeground(Color.GREEN);
 		lblMessageRight.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		lblMessageRight.setHorizontalAlignment(SwingConstants.LEFT);

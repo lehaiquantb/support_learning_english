@@ -162,6 +162,8 @@ public class JDialogCRUD extends JDialog {
 		contentPanel.add(lblImage);
 
 		panelImage = new JPanel();
+		BorderLayout borderLayout = new BorderLayout(0, 0);
+		panelImage.setLayout(borderLayout);
 		panelImage.setBounds(319, 253, 130, 109);
 		contentPanel.add(panelImage);
 
@@ -434,6 +436,7 @@ public class JDialogCRUD extends JDialog {
 		textFieldSpelling.setText(null);
 		textFieldTags.setText(null);
 		textFieldWord.setText(null);
+		panelImage.removeAll();
 		panelImage.add(new JLabel(Util1.getImageIconResize(getClass(), "NoImageAvailable.jpg", 130, 109)));
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();

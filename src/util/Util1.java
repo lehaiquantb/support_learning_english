@@ -56,12 +56,13 @@ public class Util1 {
 
 	public static ImageIcon getImageIconResizeByPath(Class<?> kClass, String pathFile, String keyWord,
 			WordModel wordModel, int width, int height) {
+
 		try {
 			if (pathFile != null) {
 				File file = new File(pathFile);
 				if (file.exists()) {
 					BufferedImage myPicture = ImageIO.read(file);
-					Image newImg = myPicture.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+					Image newImg = getScaledImage(myPicture, width, height);
 					return new ImageIcon(newImg);
 				}
 			}
@@ -69,7 +70,7 @@ public class Util1 {
 				URL img = new URL(pathFile);
 				ImageIcon imageIcon = new ImageIcon(img);
 				Image image = imageIcon.getImage();
-				image = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+				image = getScaledImage(image, width, height);
 				return new ImageIcon(image);
 			} catch (MalformedURLException exception) {
 				if (keyWord != null) {
@@ -78,7 +79,7 @@ public class Util1 {
 						URL img = new URL(url);
 						ImageIcon imageIcon = new ImageIcon(img);
 						Image image = imageIcon.getImage();
-						image = image.getScaledInstance(width, height, Image.SCALE_DEFAULT);
+						image = getScaledImage(image, width, height);
 						wordModel.setPathOfImageFile(url);
 						return new ImageIcon(image);
 					} else {
@@ -92,6 +93,18 @@ public class Util1 {
 			ex.printStackTrace();
 		}
 		return null;
+	}
+
+	public static Image getScaledImage(Image image, int x, int y) {
+		int height = image.getHeight(null);
+		int width = image.getWidth(null);
+		if (width / height < x / y) {
+			return image.getScaledInstance(width * y / height, y, Image.SCALE_DEFAULT);
+		} else {
+			return image.getScaledInstance(x, height * x / width, Image.SCALE_DEFAULT);
+		}
+		// System.out.println(image.getHeight(null));
+		// System.out.println(image.getWidth(null));
 	}
 
 	public static String getMeaningTest() {

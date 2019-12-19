@@ -111,8 +111,13 @@ public class MainFrame {
 		frame.getContentPane().add(contentView);
 
 		panelFooter = new FooterView();
+		panelFooter.setSize(617, 29);
+		panelFooter.setLocation(242, 482);
 		frame.getContentPane().add(panelFooter);
-
+		
+		if (!dataModel.getWordDAO().databaseIsExist) {
+			dashboardView.getLblTextJSON().setVisible(true);
+		}
 		// JDialog CRUD
 		// this.setDialogCRUD(new JDialogAdd("Tu"));
 		this.dialogRead = new JDialogCRUD("read", dataModel, this);

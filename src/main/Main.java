@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.UIManager;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -33,6 +35,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					MainFrame window = new MainFrame(dataModel);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -51,7 +54,7 @@ public class Main {
 					builder.setPrettyPrinting();
 					Gson gson = builder.create();
 					try {
-						FileWriter writer = new FileWriter("./database/listWordModels.json");
+						FileWriter writer = new FileWriter("./JSONfile-as-database/listWordModels.json");
 						writer.write(
 								gson.toJson(dataModel.getListAllWordModels(), new TypeToken<ArrayList<WordModel>>() {
 								}.getType()));
@@ -65,7 +68,7 @@ public class Main {
 				System.out.println("The program is closing...closed");
 			}
 		});
-		//System.out.println("Application Terminating ...");
+		// System.out.println("Application Terminating ...");
 	}
 
 }

@@ -35,7 +35,7 @@ public class WordJsonDAO {
 	}
 
 	public List<WordModel> getAllWord() throws FileNotFoundException {
-		String path = "./database/listWordModels.json";
+		String path = "./JSONfile-as-database/listWordModels.json";
 		FileInputStream fis = new FileInputStream(path);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(fis));
 		ArrayList<WordModel> list;

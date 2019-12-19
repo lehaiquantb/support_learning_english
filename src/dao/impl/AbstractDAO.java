@@ -34,6 +34,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			this.databaseIsExist = false;
+			System.out.println("Database information wrong !\nPlease config again in src/resources/db.properties");
 			System.out.println("Can't connect to Database -> use JsonFile as Database...");
 			return null;
 		}

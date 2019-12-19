@@ -54,6 +54,7 @@ public class DashboardView extends JPanel {
 	private JDatePickerImpl datePickerTo;
 	private JLabel lblTextTo;
 	private JLabel lblTextFrom;
+	private JLabel lblTextJSON;
 
 	/**
 	 * 
@@ -169,7 +170,17 @@ public class DashboardView extends JPanel {
 		datePickerFrom.setBounds(75, 160, 150, 24);
 		add(datePickerFrom);
 		datePickerFrom.getJFormattedTextField().setFont(new Font("Tahoma", Font.BOLD, 11));
+		
+		lblTextJSON = new JLabel("Used JSONfile as database");
+		lblTextJSON.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTextJSON.setBounds(10, 441, 212, 20);
+		add(lblTextJSON);
+		lblTextJSON.setVisible(false);
 
+	}
+
+	public JLabel getLblTextJSON() {
+		return lblTextJSON;
 	}
 
 	public JLabel getLblTextTo() {

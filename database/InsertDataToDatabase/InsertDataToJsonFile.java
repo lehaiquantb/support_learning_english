@@ -40,7 +40,7 @@ public class InsertDataToJsonFile {
 		builder.setDateFormat("yyyy-MM-dd HH:mm:ss");
 		// builder.setPrettyPrinting();
 		Gson gson = builder.create();
-		FileWriter writer = new FileWriter("./database/listWordModels.json");
+		FileWriter writer = new FileWriter("./JSONfile-as-database/listWordModels.json");
 
 //		writer.write(gson.toJson(filter.listWords.subList(0, 20), new TypeToken<ArrayList<WordModel>>() {
 //		}.getType()));
