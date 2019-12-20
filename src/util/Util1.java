@@ -2,8 +2,13 @@ package util;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Timestamp;
@@ -17,12 +22,17 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.speech.AudioException;
 import javax.speech.Central;
+import javax.speech.EngineException;
+import javax.speech.EngineStateError;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
 import model.WordModel;
 
 public class Util1 {
@@ -135,60 +145,83 @@ public class Util1 {
 	public static void playAudio(String filePath, String wordOrPhrase)
 			throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		AudioInputStream audioInputStream;
-		Clip clip;
 		try {
-			if (filePath != null) {
-				File file = new File(filePath);
-				if (file.exists()) {
-					audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
-					// create clip reference
-					clip = AudioSystem.getClip();
-					// open audioInputStream to the clip
-					clip.open(audioInputStream);
-					clip.start();
-				} else {
-					// Set property as Kevin Dictionary
-					System.setProperty("freetts.voices",
-							"com.sun.speech.freetts.en.us" + ".cmu_us_kal.KevinVoiceDirectory");
-					// Register Engine
-					Central.registerEngineCentral("com.sun.speech.freetts" + ".jsapi.FreeTTSEngineCentral");
-					// Create a Synthesizer
-					Synthesizer synthesizer = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
-					// Allocate synthesizer
-					synthesizer.allocate();
-					// Resume Synthesizer
-					synthesizer.resume();
-					// Speaks the given text
-					// until the queue is empty.
-					synthesizer.speakPlainText(wordOrPhrase, null);
-					synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
-					// Deallocate the Synthesizer.
-//					synthesizer.deallocate();
+			if (!playAudioFromGgTranslate(wordOrPhrase)) {
+				Clip clip;
+				try {
+					if (filePath != null) {
+						File file = new File(filePath);
+						if (file.exists()) {
+							audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
+							// create clip reference
+							clip = AudioSystem.getClip();
+							// open audioInputStream to the clip
+							clip.open(audioInputStream);
+							clip.start();
+						} else {
+							playAudioTTS(wordOrPhrase);
+						}
+					} else {
+						playAudioTTS(wordOrPhrase);
+					}
+				} catch (Exception e) {
+					System.out.println("Error with playing sound.");
+					e.printStackTrace();
 				}
-			} else {
-				// Set property as Kevin Dictionary
-				System.setProperty("freetts.voices",
-						"com.sun.speech.freetts.en.us" + ".cmu_us_kal.KevinVoiceDirectory");
-				// Register Engine
-				Central.registerEngineCentral("com.sun.speech.freetts" + ".jsapi.FreeTTSEngineCentral");
-				// Create a Synthesizer
-				Synthesizer synthesizer = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
-				// Allocate synthesizer
-				synthesizer.allocate();
-				// Resume Synthesizer
-				synthesizer.resume();
-				// Speaks the given text
-				// until the queue is empty.
-				synthesizer.speakPlainText(wordOrPhrase, null);
-				synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
-				// Deallocate the Synthesizer.
-//				synthesizer.deallocate();
 			}
-		} catch (Exception e) {
-			System.out.println("Error with playing sound.");
-			e.printStackTrace();
+		} catch (JavaLayerException e1) {
+			e1.printStackTrace();
 		}
 
+	}
+
+	public static void playAudioTTS(String word)
+			throws EngineException, AudioException, EngineStateError, IllegalArgumentException, InterruptedException {
+		// Set property as Kevin Dictionary
+		System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us" + ".cmu_us_kal.KevinVoiceDirectory");
+		// Register Engine
+		Central.registerEngineCentral("com.sun.speech.freetts" + ".jsapi.FreeTTSEngineCentral");
+		// Create a Synthesizer
+		Synthesizer synthesizer = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
+		// Allocate synthesizer
+		synthesizer.allocate();
+		// Resume Synthesizer
+		synthesizer.resume();
+		// Speaks the given text
+		// until the queue is empty.
+		synthesizer.speakPlainText(word, null);
+		synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
+		// Deallocate the Synthesizer.
+//		synthesizer.deallocate();
+	}
+
+	public static boolean playAudioFromGgTranslate(String word) throws JavaLayerException {
+		try {
+			word = java.net.URLEncoder.encode(word, "UTF-8");
+			// URL url = new URL("http://translate.google.com/translate_tts?tl=en&q=" +
+			// word);
+			URL url = new URL("https://translate.google.com/translate_tts?ie=UTF-8&tl=en-US&client=tw-ob&q=" + word);
+			HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
+			urlConn.addRequestProperty("User-Agent", "Mozilla/4.76");
+			InputStream audioSrc = urlConn.getInputStream();
+			if (urlConn.getResponseCode() != 200) {
+				return false;
+			}
+			// DataInputStream read = new DataInputStream(audioSrc);
+			// OutputStream outstream = new FileOutputStream(new File("D:\\mysound.mp3"));
+			// byte[] buffer = new byte[1024];
+			// int len;
+//		while ((len = read.read(buffer)) > 0) {
+//			//System.out.println(len);
+//			outstream.write(buffer, 0, len);
+//		}
+			new Player(audioSrc).play();
+//		//outstream.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+		return true;
 	}
 
 //	public static void main(String[] args) {

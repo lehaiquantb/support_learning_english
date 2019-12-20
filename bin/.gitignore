@@ -1,12 +1,2 @@
-/InsertDataToDatabase/
-/SqlServer/
-/controller/
-/dao/
-/image/
-/main/
-/mapper/
-/model/
-/resources/
-/test/
 /util/
-/view/
+/resources/
