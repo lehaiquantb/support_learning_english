@@ -151,6 +151,7 @@ public class DataModel {
 	public void setRandomWordModel() {
 		int size = listWordModelsByMode.size();
 		Random rand = new Random();
+
 		this.randomWordModel = listWordModelsByMode.get(rand.nextInt(size));
 	}
 

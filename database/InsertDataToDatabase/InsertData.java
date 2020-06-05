@@ -99,8 +99,9 @@ public class InsertData {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-		InsertData insertData = new InsertData();
-		//insertData.run();
+		 InsertData insertData = new InsertData();
+		// insertData.run();
+
 	}
 
 }

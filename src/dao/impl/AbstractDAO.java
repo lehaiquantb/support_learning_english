@@ -23,6 +23,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	public AbstractDAO() {
 		this.databaseIsExist = true;
 		this.connection = this.getConnection();
+		System.out.println("connected");
 	}
 
 	public Connection getConnection() {

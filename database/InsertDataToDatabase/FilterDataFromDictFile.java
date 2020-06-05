@@ -42,12 +42,13 @@ public class FilterDataFromDictFile {
 		try {
 			sc = new Scanner(new BufferedReader(new FileReader(file)));
 			sc.useDelimiter("@");
-			while (sc.hasNext()) {
+			for (int i = 0; sc.hasNext(); i++) {
 				q = sc.next();
 				q = "@" + q;
 				list.add(q);
 				// System.out.println(q);
 			}
+
 			System.out.println("Total word : " + list.size());
 		} finally {
 			list.remove(0);
@@ -178,6 +179,11 @@ public class FilterDataFromDictFile {
 			// word.getWordOrPhrase());
 			word.setPathOfAudioFile("D:\\Study\\20191\\OOP\\data\\pronounce_flac\\" + word.getWordOrPhrase() + ".flac");
 		}
+	}
+
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+		FilterDataFromDictFile filter = new FilterDataFromDictFile();
+		filter.run();
 	}
 
 }
